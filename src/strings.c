@@ -2018,3 +2018,12 @@ const u8 gText_SubQuest2_Desc17[] = _("Description Sub 17");
 const u8 gText_SubQuest2_Desc18[] = _("Description Sub 18");
 const u8 gText_SubQuest2_Desc19[] = _("Description Sub 19");
 const u8 gText_SubQuest2_Desc20[] = _("Description Sub 20");
+// Start restricted_sparring
+const u8 gText_Heal[] = _("HEAL");
+const u8 gText_Overview[] = _("OVERVIEW");
+const u8 gText_Restrictions[] = _("RESTRICTIONS");
+const u8 gText_Rewards[] = _("REWARDS");
+const u8 gText_RestrictedSparringResults[] = _("{PLAYER}'s Restricted Sparring Results");
+const u8 gText_BestStreak[] = _("Best Streak: {STR_VAR_2} - {STR_VAR_1}");
+const u8 gText_TypesMastered[] = _("Types Mastered: {STR_VAR_1}");
+// End restricted_sparring

@@ -1,0 +1,112 @@
+MasterDojo_BattleRoom_MapScripts::
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, MasterDojo_BattleRoom_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE
+	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, MasterDojo_BattleRoom_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE
+	.byte 0
+
+MasterDojo_BattleRoom_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
+	map_script_2 VAR_TEMP_0, 0, RestrictedSparring_BattleCourt_EventScript_SetUpOpponent
+	.2byte 0
+
+MasterDojo_BattleRoom_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE:
+	map_script_2 VAR_TEMP_1, 0, MasterDojo_Lobby_EventScript_PlayerFaceEast
+	.2byte 0
+
+
+MasterDojo_Lobby_EventScript_PlayerFaceEast::
+	setvar VAR_TEMP_1, 1
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_EAST
+	end
+
+
+MasterDojo_BattleRoom_EventScript_EnterRoomMovement::
+	applymovement 1, MasterDojo_BattleRoom_EventScript_EnterRoomMovement_Movement_0
+	applymovement OBJ_EVENT_ID_PLAYER, MasterDojo_BattleRoom_EventScript_EnterRoomMovement_Movement_1
+	waitmovement 1
+	return
+
+
+MasterDojo_BattleRoom_EventScript_ContinueChallengeMovement::
+	applymovement OBJ_EVENT_ID_PLAYER, MasterDojo_BattleRoom_EventScript_ContinueChallengeMovement_Movement_0
+	applymovement OBJ_EVENT_ID_CAMERA, MasterDojo_BattleRoom_EventScript_ContinueChallengeMovement_Movement_1
+	applymovement 1, MasterDojo_BattleRoom_EventScript_ContinueChallengeMovement_Movement_2
+	waitmovement 1
+	return
+
+
+MasterDojo_BattleRoom_EventScript_OpponentEnterMovement::
+	waitmovement OBJ_EVENT_ID_CAMERA
+	special RemoveCameraObject
+	applymovement 1, Common_Movement_WalkInPlaceDown
+	return
+
+
+MasterDojo_BattleRoom_EventScript_DeafeatedOpponentMovement::
+	special SpawnCameraObject
+	applymovement OBJ_EVENT_ID_CAMERA, MasterDojo_BattleRoom_EventScript_DeafeatedOpponentMovement_Movement_0
+	applymovement OBJ_EVENT_ID_PLAYER, MasterDojo_BattleRoom_EventScript_DeafeatedOpponentMovement_Movement_1
+	applymovement 1, MasterDojo_BattleRoom_EventScript_DeafeatedOpponentMovement_Movement_2
+	waitmovement OBJ_EVENT_ID_CAMERA
+	removeobject 2
+	waitmovement 1
+	return
+
+
+MasterDojo_BattleRoom_EventScript_RefreshOpponentObject::
+	removeobject 2
+	addobject 2
+	return
+
+
+MasterDojo_BattleRoom_EventScript_EnterRoomMovement_Movement_0:
+	step_end
+
+MasterDojo_BattleRoom_EventScript_EnterRoomMovement_Movement_1:
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	step_end
+
+MasterDojo_BattleRoom_EventScript_ContinueChallengeMovement_Movement_0:
+	walk_right
+	walk_right
+	step_end
+
+MasterDojo_BattleRoom_EventScript_ContinueChallengeMovement_Movement_1:
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	step_end
+
+MasterDojo_BattleRoom_EventScript_ContinueChallengeMovement_Movement_2:
+	walk_up
+	walk_right
+	walk_right
+	walk_right
+	face_down
+	step_end
+
+MasterDojo_BattleRoom_EventScript_DeafeatedOpponentMovement_Movement_0:
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	step_end
+
+MasterDojo_BattleRoom_EventScript_DeafeatedOpponentMovement_Movement_1:
+	walk_left
+	walk_left
+	face_up
+	step_end
+
+MasterDojo_BattleRoom_EventScript_DeafeatedOpponentMovement_Movement_2:
+	walk_left
+	walk_left
+	walk_left
+	walk_down
+	step_end

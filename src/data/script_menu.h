@@ -789,6 +789,33 @@ static const struct MenuAction MultichoiceList_BattleArcadeRecords[] =
 };
 // End battle_arcade
 
+// Start restricted_sparring
+static const struct MenuAction MultichoiceList_GoOnHealRecordRestRetire[] =
+{
+    {gText_GoOn},
+    {gText_Heal},
+    {gText_Record2},
+    {gText_Rest},
+    {gText_Retire},
+};
+
+static const struct MenuAction MultichoiceList_GoOnHealRestRetire[] =
+{
+    {gText_GoOn},
+    {gText_Heal},
+    {gText_Rest},
+    {gText_Retire},
+};
+
+static const struct MenuAction MultichoiceList_RestrictedSparringRules[] =
+{
+    {gText_Overview},
+    {gText_Restrictions},
+    {gText_Rewards},
+    {gText_Exit},
+};
+// End restricted_sparring
+
 static const struct MenuAction MultichoiceList_Exit[] =
 {
     {gText_Exit},
@@ -920,6 +947,11 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_CHALLENGE_TYPES_INFO]       = MULTICHOICE(MultichoiceList_ChallengeTypesInfo),
     [MULTI_BATTLE_ARCADE_RECORDS]       = MULTICHOICE(MultichoiceList_BattleArcadeRecords),
 // End battle_arcade
+    // Start restricted_sparring
+    [MULTI_GO_ON_HEAL_RECORD_REST_RETIRE] = MULTICHOICE(MultichoiceList_GoOnHealRecordRestRetire),
+    [MULTI_GO_ON_HEAL_REST_RETIRE] = MULTICHOICE(MultichoiceList_GoOnHealRestRetire),
+    [MULTI_RESTRICTED_SPARRING_RULES] = MULTICHOICE(MultichoiceList_RestrictedSparringRules),
+    // End restricted_sparring
 };
 
 const u8 *const gStdStrings[] =

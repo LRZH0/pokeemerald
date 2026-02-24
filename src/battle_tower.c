@@ -37,6 +37,7 @@
 #include "constants/event_objects.h"
 #include "constants/moves.h"
 #include "battle_arcade.h" // battle_arcade
+#include "restricted_sparring.h" // restricted_sparring
 
 extern const u8 MossdeepCity_SpaceCenter_2F_EventScript_MaxieTrainer[];
 extern const u8 MossdeepCity_SpaceCenter_2F_EventScript_TabithaTrainer[];
@@ -1105,6 +1106,7 @@ static void SetNextFacilityOpponent(void)
 u16 GetRandomScaledFrontierTrainerId(u8 challengeNum, u8 battleNum)
 {
     u16 trainerId;
+    challengeNum = Sparring_SetChallengeNumToMax(challengeNum); //  restricted_sparring
 
     if (challengeNum <= 7)
     {

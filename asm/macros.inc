@@ -15,3 +15,4 @@
 	.include "asm/macros/battle_frontier/battle_tower.inc"
 	.include "asm/macros/battle_frontier/frontier_util.inc"
 	.include "asm/macros/battle_frontier/battle_arcade.inc" @ battle_arcade
+	.include "asm/macros/battle_frontier/restricted_sparring.inc" @ restricted_sparring

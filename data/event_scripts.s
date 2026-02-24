@@ -13,6 +13,7 @@
 #include "constants/battle_tent.h"
 #include "constants/battle_tower.h"
 #include "constants/battle_arcade.h" // battle_arcade
+#include "constants/restricted_sparring.h"
 #include "constants/berry.h"
 #include "constants/cable_club.h"
 #include "constants/coins.h"
@@ -1068,3 +1069,8 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/BattleArcade_Hallway/scripts.inc"
 // End battle_arcade
 
+	@ Start restricted_sparring
+	.include "data/scripts/restricted_sparring.inc"
+	.include "data/maps/MasterDojo_Lobby/scripts.inc"
+	.include "data/maps/MasterDojo_BattleRoom/scripts.inc"
+	@ End restricted_sparring

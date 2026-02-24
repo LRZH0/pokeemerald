@@ -126,6 +126,9 @@
 #define MULTI_CHALLENGE_TYPES_INFO         114
 #define MULTI_BATTLE_ARCADE_RECORDS        115
 // End battle_arcade
+#define MULTI_GO_ON_HEAL_RECORD_REST_RETIRE 116
+#define MULTI_GO_ON_HEAL_REST_RETIRE 117
+#define MULTI_RESTRICTED_SPARRING_RULES 118
 
 // Lilycove SS Tidal Multichoice Selections
 #define SSTIDAL_SELECTION_SLATEPORT        0

@@ -539,3 +539,6 @@ gSpecials::
 		def_special CallBattleArcadeFunc
 		def_special DoArcadeTrainerBattle
 // End battle_arcade
+	def_special CallRestrictedSparringFunc
+	def_special Sparring_CloseWinsWindow
+	def_special Sparring_ShowWinsWindow
