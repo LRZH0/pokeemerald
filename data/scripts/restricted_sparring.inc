@@ -180,7 +180,7 @@ RestrictedSparring_Entrance_EventScript_WarpToBattleRoom::
 	special CallFrontierUtilFunc
 	frontier_saveparty
 	setvar VAR_RESULT, 0
-	@ warp MAP_MASTER_DOJO_BATTLE_ROOM, 0, 6
+	warp MAP_MASTER_DOJO_BATTLE_ROOM, 0, 6
 	sparring_save CHALLENGE_STATUS_SAVING
 	return
 
@@ -462,7 +462,7 @@ RestrictedSparring_BattleCourt_EventScript_WarpToLobbyLost::
 
 
 RestrictedSparring_BattleCourt_EventScript_WarpToLobby::
-	@ warp MAP_MASTER_DOJO_LOBBY, 7, 8
+	warp MAP_MASTER_DOJO_LOBBY, 7, 8
 	waitstate
 	end
 
