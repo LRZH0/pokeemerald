@@ -2712,8 +2712,15 @@ const u32 gMonShinyPalette_Chimecho[] = INCGFX_U32("graphics/pokemon/chimecho/sh
 const u8 gMonIcon_Chimecho[] = INCGFX_U8("graphics/pokemon/chimecho/icon.png", ".4bpp");
 const u8 gMonFootprint_Chimecho[] = INCGFX_U8("graphics/pokemon/chimecho/footprint.png", ".1bpp");
 
-const u32 gMonStillFrontPic_Egg[] = INCGFX_U32("graphics/pokemon/egg/front.png", ".4bpp.lz");
-const u32 gMonPalette_Egg[] = INCGFX_U32("graphics/pokemon/egg/normal.pal", ".gbapal.lz");
+const u32 gMonStillFrontPic_Dhelmise[] = INCBIN_U32("graphics/pokemon/dhelmise/front.4bpp.lz");
+const u32 gMonPalette_Dhelmise[] = INCBIN_U32("graphics/pokemon/dhelmise/normal.gbapal.lz");
+const u32 gMonBackPic_Dhelmise[] = INCBIN_U32("graphics/pokemon/dhelmise/back.4bpp.lz");
+const u32 gMonShinyPalette_Dhelmise[] = INCBIN_U32("graphics/pokemon/dhelmise/shiny.gbapal.lz");
+const u8 gMonIcon_Dhelmise[] = INCBIN_U8("graphics/pokemon/dhelmise/icon.4bpp");
+const u8 gMonFootprint_Dhelmise[] = INCBIN_U8("graphics/pokemon/dhelmise/footprint.1bpp");
+
+const u32 gMonStillFrontPic_Egg[] = INCBIN_U32("graphics/pokemon/egg/front.4bpp.lz");
+const u32 gMonPalette_Egg[] = INCBIN_U32("graphics/pokemon/egg/normal.gbapal.lz");
 
 const u32 gMonStillFrontPic_UnownB[] = INCGFX_U32("graphics/pokemon/unown/b/front.png", ".4bpp.lz");
 const u32 gMonBackPic_UnownB[] = INCGFX_U32("graphics/pokemon/unown/b/back.png", ".4bpp.lz");

@@ -4643,4 +4643,16 @@ const struct PokedexEntry gPokedexEntries[] =
         .trainerScale = 290,
         .trainerOffset = 2,
     },
+
+    [NATIONAL_DEX_DHELMISE] =
+    {
+        .categoryName = _("SEA CREEPER"),
+        .height = 39,
+        .weight = 2100,
+        .description = gDhelmisePokedexText,
+        .pokemonScale = 256,
+        .pokemonOffset = 0,
+        .trainerScale = 510,
+        .trainerOffset = 11,
+    },
 };

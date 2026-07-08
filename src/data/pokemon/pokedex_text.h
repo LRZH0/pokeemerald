@@ -2319,3 +2319,9 @@ const u8 gDeoxysPokedexText[] = _(
     "extraterrestrial virus exposed to a laser\n"
     "beam. Its body is configured for superior\n"
     "agility and speed.");
+
+const u8 gDhelmisePokedexText[] = _(
+    "The soul of seaweed adrift in the waves\n"
+    "became reborn as this POKéMON.\n"
+    "It maintains itself with new infusions of\n"
+    "seabed detritus and seaweed.");
