@@ -145,9 +145,9 @@ static void FormatMonSizeRecord(u8 *string, u32 size)
 
 static u8 CompareMonSize(u16 species, u16 *sizeRecord)
 {
-    if (gSpecialVar_Result == PARTY_NOTHING_CHOSEN)
+    if (gSpecialVar_Result == 0xFF)
     {
-        return COMPARE_SIZE_NONE;
+        return 0;
     }
     else
     {
@@ -155,7 +155,7 @@ static u8 CompareMonSize(u16 species, u16 *sizeRecord)
 
         if (GetMonData(pkmn, MON_DATA_IS_EGG) == TRUE || GetMonData(pkmn, MON_DATA_SPECIES) != species)
         {
-            return COMPARE_SIZE_INCORRECT_SPECIES;
+            return 1;
         }
         else
         {
@@ -169,12 +169,12 @@ static u8 CompareMonSize(u16 species, u16 *sizeRecord)
             FormatMonSizeRecord(gStringVar2, newSize);
             if (newSize <= oldSize)
             {
-                return COMPARE_SIZE_SMALLER;
+                return 2;
             }
             else
             {
                 *sizeRecord = sizeParams;
-                return COMPARE_SIZE_LARGER;
+                return 3;
             }
         }
     }
