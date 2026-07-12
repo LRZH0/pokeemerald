@@ -64,17 +64,44 @@ struct TrainerMonItemCustomMoves
     u16 moves[MAX_MON_MOVES];
 };
 
+struct TrainerMonNoItemAdvanced
+{
+    u16 iv;
+    u8 evs[NUM_STATS];
+    u8 lvl;
+    u16 species;
+    u8 abilityNum;
+    u16 friendship;
+    u16 moves[MAX_MON_MOVES];
+};
+
+struct TrainerMonItemAdvanced
+{
+    u16 iv;
+    u8 evs[NUM_STATS];
+    u8 lvl;
+    u16 species;
+    u8 abilityNum;
+    u16 friendship;
+    u16 heldItem;
+    u16 moves[MAX_MON_MOVES];
+};
+
 #define NO_ITEM_DEFAULT_MOVES(party) { .NoItemDefaultMoves = party }, .partySize = ARRAY_COUNT(party), .partyFlags = 0
 #define NO_ITEM_CUSTOM_MOVES(party) { .NoItemCustomMoves = party }, .partySize = ARRAY_COUNT(party), .partyFlags = F_TRAINER_PARTY_CUSTOM_MOVESET
+#define NO_ITEM_ADVANCED(party) { .NoItemAdvanced = party }, .partySize = ARRAY_COUNT(party), .partyFlags = F_TRAINER_PARTY_ADVANCED | F_TRAINER_PARTY_CUSTOM_MOVESET
 #define ITEM_DEFAULT_MOVES(party) { .ItemDefaultMoves = party }, .partySize = ARRAY_COUNT(party), .partyFlags = F_TRAINER_PARTY_HELD_ITEM
 #define ITEM_CUSTOM_MOVES(party) { .ItemCustomMoves = party }, .partySize = ARRAY_COUNT(party), .partyFlags = F_TRAINER_PARTY_CUSTOM_MOVESET | F_TRAINER_PARTY_HELD_ITEM
+#define ITEM_ADVANCED(party) { .ItemAdvanced = party }, .partySize = ARRAY_COUNT(party), .partyFlags = F_TRAINER_PARTY_ADVANCED | F_TRAINER_PARTY_CUSTOM_MOVESET | F_TRAINER_PARTY_HELD_ITEM
 
 union TrainerMonPtr
 {
     const struct TrainerMonNoItemDefaultMoves *NoItemDefaultMoves;
     const struct TrainerMonNoItemCustomMoves *NoItemCustomMoves;
+    const struct TrainerMonNoItemAdvanced *NoItemAdvanced;
     const struct TrainerMonItemDefaultMoves *ItemDefaultMoves;
     const struct TrainerMonItemCustomMoves *ItemCustomMoves;
+    const struct TrainerMonItemAdvanced *ItemAdvanced;
 };
 
 struct Trainer
@@ -135,6 +162,8 @@ extern const union AnimCmd *const *const gMonFrontAnimsPtrTable[];
 extern const struct CompressedSpriteSheet gMonFrontPicTable[];
 
 extern const struct Trainer gTrainers[];
+extern const struct Trainer gTrainersEasy[];
+extern const struct Trainer gTrainersHard[];
 extern const u8 gTrainerClassNames[][13];
 extern const u8 gSpeciesNames[][POKEMON_NAME_LENGTH + 1];
 extern const u8 gMoveNames[MOVES_COUNT][MOVE_NAME_LENGTH + 1];

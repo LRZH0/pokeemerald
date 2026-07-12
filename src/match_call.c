@@ -1822,6 +1822,12 @@ static void PopulateSpeciesFromTrainerParty(int matchCallId, u8 *destStr)
     case F_TRAINER_PARTY_CUSTOM_MOVESET | F_TRAINER_PARTY_HELD_ITEM:
         speciesName = gSpeciesNames[party.ItemCustomMoves[monId].species];
         break;
+    case F_TRAINER_PARTY_ADVANCED | F_TRAINER_PARTY_CUSTOM_MOVESET:
+        speciesName = gSpeciesNames[party.NoItemAdvanced[monId].species];
+        break;
+    case F_TRAINER_PARTY_ADVANCED | F_TRAINER_PARTY_CUSTOM_MOVESET | F_TRAINER_PARTY_HELD_ITEM:
+        speciesName = gSpeciesNames[party.ItemAdvanced[monId].species];
+        break;
     }
 
     StringCopy(destStr, speciesName);

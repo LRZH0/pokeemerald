@@ -5613,6 +5613,18 @@ static u32 GetTrainerMoneyToGive(u16 trainerId)
                 lastMonLevel = party[gTrainers[trainerId].partySize - 1].lvl;
             }
             break;
+        case F_TRAINER_PARTY_ADVANCED | F_TRAINER_PARTY_CUSTOM_MOVESET:
+            {
+                const struct TrainerMonNoItemAdvanced *party = gTrainers[trainerId].party.NoItemAdvanced;
+                lastMonLevel = party[gTrainers[trainerId].partySize - 1].lvl;
+            }
+            break;
+        case F_TRAINER_PARTY_ADVANCED | F_TRAINER_PARTY_CUSTOM_MOVESET | F_TRAINER_PARTY_HELD_ITEM:
+            {
+                const struct TrainerMonItemAdvanced *party = gTrainers[trainerId].party.ItemAdvanced;
+                lastMonLevel = party[gTrainers[trainerId].partySize - 1].lvl;
+            }
+            break;
         }
 
         for (; gTrainerMoneyTable[i].classId != 0xFF; i++)
@@ -9682,6 +9694,16 @@ static void Cmd_pickup(void)
                 heldItem = GetBattlePyramidPickupItemId();
                 SetMonData(&gPlayerParty[i], MON_DATA_HELD_ITEM, &heldItem);
             }
+            else if (species == SPECIES_SHUCKLE
+                && heldItem >= FIRST_BERRY_INDEX
+                && heldItem <= LAST_BERRY_INDEX)
+            {
+                if (!(Random() % 16))
+                {
+                    heldItem = ITEM_BERRY_JUICE;
+                    SetMonData(&gPlayerParty[i], MON_DATA_HELD_ITEM, &heldItem);
+                }
+            }
         }
     }
     else
@@ -9720,6 +9742,16 @@ static void Cmd_pickup(void)
                         SetMonData(&gPlayerParty[i], MON_DATA_HELD_ITEM, &sRarePickupItems[lvlDivBy10 + (99 - rand)]);
                         break;
                     }
+                }
+            }
+            else if (species == SPECIES_SHUCKLE
+                && heldItem >= FIRST_BERRY_INDEX
+                && heldItem <= LAST_BERRY_INDEX)
+            {
+                if (!(Random() % 16))
+                {
+                    heldItem = ITEM_BERRY_JUICE;
+                    SetMonData(&gPlayerParty[i], MON_DATA_HELD_ITEM, &heldItem);
                 }
             }
         }

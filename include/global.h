@@ -527,6 +527,10 @@ struct SaveBlock2
              u16 optionsExpBarSpeed:4;  //tx_optionsPlus
              u16 optionsDisableMatchCall:1; //tx_optionsPlus
              u16 optionsCurrentFont:1;  //tx_optionsPlus
+             u16 optionsDifficulty:2;
+             u16 optionsMoveInfo:1;
+             u16 optionsTypeEffectiveness:1;
+             u16 optionsBadgeBoost:1;
              //u16 padding1:4;
              //u16 padding2;
     /*0x18*/ struct Pokedex pokedex;

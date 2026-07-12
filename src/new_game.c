@@ -101,6 +101,10 @@ static void SetDefaultOptions(void)
     gSaveBlock2Ptr->optionsExpBarSpeed = 0; //tx_optionsPlus
     gSaveBlock2Ptr->optionsDisableMatchCall = 0;    //tx_optionsPlus
     gSaveBlock2Ptr->optionsCurrentFont = 0;         //tx_optionsPlus
+    gSaveBlock2Ptr->optionsDifficulty = 1;
+    gSaveBlock2Ptr->optionsMoveInfo = 0;
+    gSaveBlock2Ptr->optionsTypeEffectiveness = 0;
+    gSaveBlock2Ptr->optionsBadgeBoost = 0;
 }
 
 static void ClearPokedexFlags(void)

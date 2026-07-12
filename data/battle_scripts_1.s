@@ -159,7 +159,7 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_EffectDefenseUpHit           @ EFFECT_DEFENSE_UP_HIT
 	.4byte BattleScript_EffectAttackUpHit            @ EFFECT_ATTACK_UP_HIT
 	.4byte BattleScript_EffectAllStatsUpHit          @ EFFECT_ALL_STATS_UP_HIT
-	.4byte BattleScript_EffectHit                    @ EFFECT_UNUSED_8D
+	.4byte BattleScript_EffectAnchorShot             @ EFFECT_ANCHOR_SHOT
 	.4byte BattleScript_EffectBellyDrum              @ EFFECT_BELLY_DRUM
 	.4byte BattleScript_EffectPsychUp                @ EFFECT_PSYCH_UP
 	.4byte BattleScript_EffectMirrorCoat             @ EFFECT_MIRROR_COAT
@@ -1450,6 +1450,33 @@ BattleScript_EffectMeanLook::
 	jumpifstatus2 BS_TARGET, STATUS2_SUBSTITUTE, BattleScript_ButItFailed
 	attackanimation
 	waitanimation
+	setmoveeffect MOVE_EFFECT_PREVENT_ESCAPE
+	seteffectprimary
+	printstring STRINGID_TARGETCANTESCAPENOW
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_MoveEnd
+
+BattleScript_EffectAnchorShot::
+	attackcanceler
+	accuracycheck BattleScript_PrintMoveMissed, ACC_CURR_MOVE
+	attackstring
+	ppreduce
+	critcalc
+	damagecalc
+	typecalc
+	adjustnormaldamage
+	attackanimation
+	waitanimation
+	effectivenesssound
+	hitanimation BS_TARGET
+	waitstate
+	healthbarupdate BS_TARGET
+	datahpupdate BS_TARGET
+	critmessage
+	waitmessage B_WAIT_TIME_LONG
+	resultmessage
+	waitmessage B_WAIT_TIME_LONG
+	jumpifstatus2 BS_TARGET, STATUS2_ESCAPE_PREVENTION, BattleScript_MoveEnd
 	setmoveeffect MOVE_EFFECT_PREVENT_ESCAPE
 	seteffectprimary
 	printstring STRINGID_TARGETCANTESCAPENOW

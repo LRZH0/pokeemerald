@@ -2712,6 +2712,13 @@ const u32 gMonShinyPalette_Chimecho[] = INCGFX_U32("graphics/pokemon/chimecho/sh
 const u8 gMonIcon_Chimecho[] = INCGFX_U8("graphics/pokemon/chimecho/icon.png", ".4bpp");
 const u8 gMonFootprint_Chimecho[] = INCGFX_U8("graphics/pokemon/chimecho/footprint.png", ".1bpp");
 
+const u32 gMonStillFrontPic_Dhelmise[] = INCGFX_U32("graphics/pokemon/dhelmise/front.png", ".4bpp.lz");
+const u32 gMonPalette_Dhelmise[] = INCGFX_U32("graphics/pokemon/dhelmise/normal.pal", ".gbapal.lz");
+const u32 gMonBackPic_Dhelmise[] = INCGFX_U32("graphics/pokemon/dhelmise/back.png", ".4bpp.lz");
+const u32 gMonShinyPalette_Dhelmise[] = INCGFX_U32("graphics/pokemon/dhelmise/shiny.pal", ".gbapal.lz");
+const u8 gMonIcon_Dhelmise[] = INCGFX_U8("graphics/pokemon/dhelmise/icon.png", ".4bpp");
+const u8 gMonFootprint_Dhelmise[] = INCGFX_U8("graphics/pokemon/dhelmise/footprint.png", ".1bpp");
+
 const u32 gMonStillFrontPic_Egg[] = INCGFX_U32("graphics/pokemon/egg/front.png", ".4bpp.lz");
 const u32 gMonPalette_Egg[] = INCGFX_U32("graphics/pokemon/egg/normal.pal", ".gbapal.lz");
 

@@ -2004,7 +2004,13 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 fir
             {
             case 0:
             {
-                const struct TrainerMonNoItemDefaultMoves *partyData = gTrainers[trainerNum].party.NoItemDefaultMoves;
+                const struct TrainerMonNoItemDefaultMoves *partyData;
+                if (gSaveBlock2Ptr->optionsDifficulty == 2)
+                    partyData = gTrainersHard[trainerNum].party.NoItemDefaultMoves;
+                else if (gSaveBlock2Ptr->optionsDifficulty == 0)
+                    partyData = gTrainersEasy[trainerNum].party.NoItemDefaultMoves;
+                else
+                    partyData = gTrainers[trainerNum].party.NoItemDefaultMoves;
 
                 for (j = 0; gSpeciesNames[partyData[i].species][j] != EOS; j++)
                     nameHash += gSpeciesNames[partyData[i].species][j];
@@ -2016,7 +2022,13 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 fir
             }
             case F_TRAINER_PARTY_CUSTOM_MOVESET:
             {
-                const struct TrainerMonNoItemCustomMoves *partyData = gTrainers[trainerNum].party.NoItemCustomMoves;
+                const struct TrainerMonNoItemCustomMoves *partyData;
+                if (gSaveBlock2Ptr->optionsDifficulty == 2)
+                    partyData = gTrainersHard[trainerNum].party.NoItemCustomMoves;
+                else if (gSaveBlock2Ptr->optionsDifficulty == 0)
+                    partyData = gTrainersEasy[trainerNum].party.NoItemCustomMoves;
+                else
+                    partyData = gTrainers[trainerNum].party.NoItemCustomMoves;
 
                 for (j = 0; gSpeciesNames[partyData[i].species][j] != EOS; j++)
                     nameHash += gSpeciesNames[partyData[i].species][j];
@@ -2034,7 +2046,13 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 fir
             }
             case F_TRAINER_PARTY_HELD_ITEM:
             {
-                const struct TrainerMonItemDefaultMoves *partyData = gTrainers[trainerNum].party.ItemDefaultMoves;
+                const struct TrainerMonItemDefaultMoves *partyData;
+                if (gSaveBlock2Ptr->optionsDifficulty == 2)
+                    partyData = gTrainersHard[trainerNum].party.ItemDefaultMoves;
+                else if (gSaveBlock2Ptr->optionsDifficulty == 0)
+                    partyData = gTrainersEasy[trainerNum].party.ItemDefaultMoves;
+                else
+                    partyData = gTrainers[trainerNum].party.ItemDefaultMoves;
 
                 for (j = 0; gSpeciesNames[partyData[i].species][j] != EOS; j++)
                     nameHash += gSpeciesNames[partyData[i].species][j];
@@ -2048,7 +2066,13 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 fir
             }
             case F_TRAINER_PARTY_CUSTOM_MOVESET | F_TRAINER_PARTY_HELD_ITEM:
             {
-                const struct TrainerMonItemCustomMoves *partyData = gTrainers[trainerNum].party.ItemCustomMoves;
+                const struct TrainerMonItemCustomMoves *partyData;
+                if (gSaveBlock2Ptr->optionsDifficulty == 2)
+                    partyData = gTrainersHard[trainerNum].party.ItemCustomMoves;
+                else if (gSaveBlock2Ptr->optionsDifficulty == 0)
+                    partyData = gTrainersEasy[trainerNum].party.ItemCustomMoves;
+                else
+                    partyData = gTrainers[trainerNum].party.ItemCustomMoves;
 
                 for (j = 0; gSpeciesNames[partyData[i].species][j] != EOS; j++)
                     nameHash += gSpeciesNames[partyData[i].species][j];
@@ -2064,6 +2088,72 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 fir
                     SetMonData(&party[i], MON_DATA_MOVE1 + j, &partyData[i].moves[j]);
                     SetMonData(&party[i], MON_DATA_PP1 + j, &gBattleMoves[partyData[i].moves[j]].pp);
                 }
+                break;
+            }
+            case F_TRAINER_PARTY_ADVANCED | F_TRAINER_PARTY_CUSTOM_MOVESET:
+            {
+                const struct TrainerMonNoItemAdvanced *partyData;
+                if (gSaveBlock2Ptr->optionsDifficulty == 2)
+                    partyData = gTrainersHard[trainerNum].party.NoItemAdvanced;
+                else if (gSaveBlock2Ptr->optionsDifficulty == 0)
+                    partyData = gTrainersEasy[trainerNum].party.NoItemAdvanced;
+                else
+                    partyData = gTrainers[trainerNum].party.NoItemAdvanced;
+
+                for (j = 0; gSpeciesNames[partyData[i].species][j] != EOS; j++)
+                    nameHash += gSpeciesNames[partyData[i].species][j];
+
+                personalityValue += nameHash << 8;
+                fixedIV = partyData[i].iv * MAX_PER_STAT_IVS / 255;
+                CreateMon(&party[i], partyData[i].species, partyData[i].lvl, fixedIV, TRUE, personalityValue, OT_ID_RANDOM_NO_SHINY, 0);
+
+                for (j = 0; j < MAX_MON_MOVES; j++)
+                {
+                    SetMonData(&party[i], MON_DATA_MOVE1 + j, &partyData[i].moves[j]);
+                    SetMonData(&party[i], MON_DATA_PP1 + j, &gBattleMoves[partyData[i].moves[j]].pp);
+                }
+
+                for (j = 0; j < NUM_STATS; j++)
+                    SetMonData(&party[i], MON_DATA_HP_EV + j, &partyData[i].evs[j]);
+
+                SetMonData(&party[i], MON_DATA_FRIENDSHIP, &partyData[i].friendship);
+                SetMonData(&party[i], MON_DATA_ABILITY_NUM, &partyData[i].abilityNum);
+
+                CalculateMonStats(&party[i]);
+                break;
+            }
+            case F_TRAINER_PARTY_ADVANCED | F_TRAINER_PARTY_CUSTOM_MOVESET | F_TRAINER_PARTY_HELD_ITEM:
+            {
+                const struct TrainerMonItemAdvanced *partyData;
+                if (gSaveBlock2Ptr->optionsDifficulty == 2)
+                    partyData = gTrainersHard[trainerNum].party.ItemAdvanced;
+                else if (gSaveBlock2Ptr->optionsDifficulty == 0)
+                    partyData = gTrainersEasy[trainerNum].party.ItemAdvanced;
+                else
+                    partyData = gTrainers[trainerNum].party.ItemAdvanced;
+
+                for (j = 0; gSpeciesNames[partyData[i].species][j] != EOS; j++)
+                    nameHash += gSpeciesNames[partyData[i].species][j];
+
+                personalityValue += nameHash << 8;
+                fixedIV = partyData[i].iv * MAX_PER_STAT_IVS / 255;
+                CreateMon(&party[i], partyData[i].species, partyData[i].lvl, fixedIV, TRUE, personalityValue, OT_ID_RANDOM_NO_SHINY, 0);
+
+                SetMonData(&party[i], MON_DATA_HELD_ITEM, &partyData[i].heldItem);
+
+                for (j = 0; j < MAX_MON_MOVES; j++)
+                {
+                    SetMonData(&party[i], MON_DATA_MOVE1 + j, &partyData[i].moves[j]);
+                    SetMonData(&party[i], MON_DATA_PP1 + j, &gBattleMoves[partyData[i].moves[j]].pp);
+                }
+
+                for (j = 0; j < NUM_STATS; j++)
+                    SetMonData(&party[i], MON_DATA_HP_EV + j, &partyData[i].evs[j]);
+
+                SetMonData(&party[i], MON_DATA_FRIENDSHIP, &partyData[i].friendship);
+                SetMonData(&party[i], MON_DATA_ABILITY_NUM, &partyData[i].abilityNum);
+
+                CalculateMonStats(&party[i]);
                 break;
             }
             }
@@ -4638,6 +4728,7 @@ u8 GetWhoStrikesFirst(u8 battler1, u8 battler2, bool8 ignoreChosenMoves)
 
     // badge boost
     if (!(gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED_LINK | BATTLE_TYPE_FRONTIER))
+        && !(gSaveBlock2Ptr->optionsBadgeBoost)
         && FlagGet(FLAG_BADGE03_GET)
         && GetBattlerSide(battler1) == B_SIDE_PLAYER)
     {

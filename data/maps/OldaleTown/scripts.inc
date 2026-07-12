@@ -293,6 +293,12 @@ OldaleTown_EventScript_DoExitMovement2::
 	waitmovement 0
 	return
 
+OldaleTown_EventScript_Test::
+	trainerbattle_single TRAINER_TEST, OldaleTown_Text_TestIntro, OldaleTown_Text_TestDefeated
+	msgbox OldaleTown_Text_TestPostBattle, MSGBOX_DEFAULT
+	release
+	end
+
 OldaleTown_Movement_RivalApproachPlayer1:
 	walk_left
 	walk_left
@@ -395,3 +401,11 @@ OldaleTown_Text_TownSign:
 	.string "OLDALE TOWN\n"
 	.string "“Where things start off scarce.”$"
 
+OldaleTown_Text_TestIntro:
+	.string "Test Intro.$"
+
+OldaleTown_Text_TestDefeated:
+	.string "Test Defeated.$"
+
+OldaleTown_Text_TestPostBattle:
+	.string "Test Post Battle.$"
