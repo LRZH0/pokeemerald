@@ -76,6 +76,10 @@ static const u8 sPurePowerDescription[] = _("Raises ATTACK.");
 static const u8 sShellArmorDescription[] = _("Blocks critical hits.");
 static const u8 sSteelworkerDescription[] = _("Powers up STEEL moves.");
 static const u8 sAirLockDescription[] = _("Negates weather effects.");
+static const u8 sDrySkinDescription[] = _("Water heals. Heat damages.");
+static const u8 sSteadfastDescription[] = _("Raises SPEED when flinched.");
+static const u8 sSolidRockDescription[] = _("Reduces super effective damage.");
+static const u8 sSnowCloakDescription[] = _("Ups evasion in hail.");
 
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
 {
@@ -157,6 +161,10 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_SHELL_ARMOR] = _("SHELL ARMOR"),
     [ABILITY_STEELWORKER] = _("STEELWORKER"),
     [ABILITY_AIR_LOCK] = _("AIR LOCK"),
+    [ABILITY_DRY_SKIN] = _("DRY SKIN"),
+    [ABILITY_STEADFAST] = _("STEADFAST"),
+    [ABILITY_SOLID_ROCK] = _("SOLID ROCK"),
+    [ABILITY_SNOW_CLOAK] = _("SNOW CLOAK"),
 };
 
 const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
@@ -239,4 +247,8 @@ const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
     [ABILITY_SHELL_ARMOR] = sShellArmorDescription,
     [ABILITY_STEELWORKER] = sSteelworkerDescription,
     [ABILITY_AIR_LOCK] = sAirLockDescription,
+    [ABILITY_DRY_SKIN] = sDrySkinDescription,
+    [ABILITY_STEADFAST] = sSteadfastDescription,
+    [ABILITY_SOLID_ROCK] = sSolidRockDescription,
+    [ABILITY_SNOW_CLOAK] = sSnowCloakDescription,
 };

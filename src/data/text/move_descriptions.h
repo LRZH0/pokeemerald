@@ -1425,6 +1425,10 @@ static const u8 sPowerWhipDescription[] = _(
     "Harshly lashes the foe with\n"
     "vines or tentacles.");
 
+static const u8 sSnarlDescription[] = _(
+    "The user cries out,\n"
+    "lowering foes' SP. ATK.");
+
 // MOVE_NONE is ignored in this table. Make sure to always subtract 1 before getting the right pointer.
 const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
 {
@@ -1784,4 +1788,5 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_PSYCHO_BOOST - 1] = sPsychoBoostDescription,
     [MOVE_ANCHOR_SHOT - 1] = sAnchorShotDescription,
     [MOVE_POWER_WHIP - 1] = sPowerWhipDescription,
+    [MOVE_SNARL - 1] = sSnarlDescription,
 };

@@ -532,9 +532,9 @@ string generate_map_constants_text(string groups_filepath, Json groups_data) {
     vector<int> map_count_vec; //DEBUG
 
     for (auto &group : groups_data["group_order"].array_items()) {
+        vector<string> map_ids;
         string groupName = json_to_string(group);
         text << "    // " << groupName << "\n";
-        vector<string> map_ids;
 
         size_t max_length = 0; //DEBUG
         int map_count = 0; //DEBUG
@@ -573,7 +573,7 @@ string generate_map_constants_text(string groups_filepath, Json groups_data) {
     }                                                   //DEBUG
     text << "0};\n\n";                                  //DEBUG
 
-    text << get_include_guard_end(guard_name);
+    text << "#endif // GUARD_CONSTANTS_MAP_GROUPS_H\n";
 
     return text.str();
 }

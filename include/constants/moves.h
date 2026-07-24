@@ -358,8 +358,16 @@
 #define MOVE_PSYCHO_BOOST 354
 #define MOVE_ANCHOR_SHOT 355
 #define MOVE_POWER_WHIP 356
+#define MOVE_SNARL 357
 
-#define MOVES_COUNT 357
+/*
+#define MOVE_DRAGON_PULSE 358
+#define MOVE_MAGNET_BOMB 359
+#define MOVE_PSYCHO_CUT 360
+#define MOVE_X_SCISSOR 361
+*/
+
+#define MOVES_COUNT 358
 
 // Used for checks for moves affected by Disable, Mimic, etc.
 #define MOVE_UNAVAILABLE 0xFFFF

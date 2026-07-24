@@ -1306,5 +1306,23 @@ const u16 gEggMoves[] = {
               MOVE_HYPNOSIS,
               MOVE_DREAM_EATER),
 
+    egg_moves(CROAGUNK,
+              MOVE_CROSS_CHOP,
+              MOVE_DYNAMIC_PUNCH,
+              MOVE_FAKE_OUT,
+              MOVE_HEADBUTT,
+              MOVE_MEDITATE,
+              MOVE_SMELLING_SALT),
+
+    egg_moves(SKRELP,
+              MOVE_ACID_ARMOR,
+              MOVE_HAZE,
+              MOVE_OUTRAGE),
+
+    egg_moves(SQUID,
+              MOVE_SLAM,
+              MOVE_BITE,
+              MOVE_REVERSAL),
+
     EGG_MOVES_TERMINATOR
 };

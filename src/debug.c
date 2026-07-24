@@ -194,6 +194,7 @@ enum { // Give Fill
     DEBUG_FILL_MENU_ITEM_POCKET_TMHM,
     DEBUG_FILL_MENU_ITEM_POCKET_BERRIES,
     DEBUG_FILL_MENU_ITEM_POCKET_KEY_ITEMS,
+    DEBUG_FILL_MENU_ITEM_PC_EMPTY,
 };
 enum { //Sound
     DEBUG_SOUND_MENU_ITEM_SE,
@@ -392,6 +393,7 @@ static void DebugAction_Fill_PocketPokeBalls(u8 taskId);
 static void DebugAction_Fill_PocketTMHM(u8 taskId);
 static void DebugAction_Fill_PocketBerries(u8 taskId);
 static void DebugAction_Fill_PocketKeyItems(u8 taskId);
+static void DebugAction_Fill_PCBoxes_Empty(u8 taskId);
 
 static void DebugAction_Sound_SE(u8 taskId);
 static void DebugAction_Sound_SE_SelectId(u8 taskId);
@@ -586,6 +588,7 @@ static const u8 sDebugText_Fill_PocketPokeBalls[] =_("Fill Pocket PokeBalls");
 static const u8 sDebugText_Fill_PocketTMHM[] =     _("Fill Pocket TMHM");
 static const u8 sDebugText_Fill_PocketBerries[] =  _("Fill Pocket Berries");
 static const u8 sDebugText_Fill_PocketKeyItems[] = _("Fill Pocket KeyItems");
+static const u8 sDebugText_Fill_Pc_Empty[] =       _("Empty PCBoxes");
 // Sound Mneu
 static const u8 sDebugText_Sound_SE[] =                 _("Effects…{CLEAR_TO 110}{RIGHT_ARROW}");
 static const u8 sDebugText_Sound_SE_ID[] =              _("Sound Id: {STR_VAR_3}\n{STR_VAR_1}    \n{STR_VAR_2}");
@@ -766,6 +769,7 @@ static const struct ListMenuItem sDebugMenu_Items_Fill[] =
     [DEBUG_FILL_MENU_ITEM_POCKET_TMHM]      = {sDebugText_Fill_PocketTMHM,      DEBUG_FILL_MENU_ITEM_POCKET_TMHM},
     [DEBUG_FILL_MENU_ITEM_POCKET_BERRIES]   = {sDebugText_Fill_PocketBerries,   DEBUG_FILL_MENU_ITEM_POCKET_BERRIES},
     [DEBUG_FILL_MENU_ITEM_POCKET_KEY_ITEMS] = {sDebugText_Fill_PocketKeyItems,  DEBUG_FILL_MENU_ITEM_POCKET_KEY_ITEMS},
+    [DEBUG_FILL_MENU_ITEM_PC_EMPTY]         = {sDebugText_Fill_Pc_Empty,        DEBUG_FILL_MENU_ITEM_PC_EMPTY}
 };
 static const struct ListMenuItem sDebugMenu_Items_Sound[] =
 {
@@ -868,6 +872,7 @@ static void (*const sDebugMenu_Actions_Fill[])(u8) =
     [DEBUG_FILL_MENU_ITEM_POCKET_TMHM]      = DebugAction_Fill_PocketTMHM,
     [DEBUG_FILL_MENU_ITEM_POCKET_BERRIES]   = DebugAction_Fill_PocketBerries,
     [DEBUG_FILL_MENU_ITEM_POCKET_KEY_ITEMS] = DebugAction_Fill_PocketKeyItems,
+    [DEBUG_FILL_MENU_ITEM_PC_EMPTY]         = DebugAction_Fill_PCBoxes_Empty,
 };
 
 static void (*const sDebugMenu_Actions_Sound[])(u8) =
@@ -1541,7 +1546,7 @@ static void Debug_InitializeBattle(u8 taskId)
     }
     
     // Set terrain
-    gBattleTerrain = sDebugBattleData->battleTerrain;
+    gBattleEnvironment = sDebugBattleData->battleTerrain;
 
     // Set AI flags
     for (i = 0; i < ARRAY_COUNT(sDebugBattleData->aiFlags); i++)
@@ -1903,8 +1908,8 @@ static void DebugAction_Util_PoisonMons(u8 taskId)
     for (i = 0; i < PARTY_SIZE; i++)
     {
         if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES, 0)
-            && GetMonData(&gPlayerParty[i], MON_DATA_SPECIES2) != SPECIES_NONE
-            && GetMonData(&gPlayerParty[i], MON_DATA_SPECIES2) != SPECIES_EGG)
+            && GetMonData(&gPlayerParty[i], MON_DATA_SPECIES) != SPECIES_NONE
+            && GetMonData(&gPlayerParty[i], MON_DATA_SPECIES) != SPECIES_EGG)
         {
             u32 curStatus = STATUS1_POISON;
             SetMonData(&gPlayerParty[i], MON_DATA_STATUS, &curStatus);
@@ -2772,7 +2777,7 @@ static void DebugAction_Give_AllTMs(u8 taskId)
 {
     u16 i;
     PlayFanfare(MUS_OBTAIN_TMHM);
-    for (i = ITEM_TM01; i <= ITEM_TM50; i++)
+    for (i = ITEM_TM01; i <= ITEM_TM51; i++)
         if (!CheckBagHasItem(i, 1))
             AddBagItem(i, 1);
     Debug_DestroyMenu_Full(taskId);
@@ -3560,7 +3565,7 @@ static void DebugAction_Give_Pokemon_ComplexCreateMon(u8 taskId) //https://githu
     }
 
     if (i >= PARTY_SIZE)
-        sentToPc = SendMonToPC(&mon);
+        sentToPc = CopyMonToPC(&mon);
     else
     {
         sentToPc = MON_GIVEN_TO_PARTY;
@@ -3724,7 +3729,7 @@ static void DebugAction_Fill_PCBoxes_Slow(u8 taskId)
                     i += 1;
                 else if (i == SPECIES_CELEBI)
                     i = SPECIES_TREECKO;
-                else if (i < SPECIES_CHIMECHO)
+                else if (i < SPECIES_EGG - 1)
                     i += 1;
                 else
                     i = 1;
@@ -3759,7 +3764,7 @@ static void DebugAction_Fill_PocketItems(u8 taskId)
 
     for (itemId = 1; itemId < ITEMS_COUNT; itemId++)
     {
-        if (ItemId_GetPocket(itemId) == POCKET_ITEMS && CheckBagHasSpace(itemId, MAX_BAG_ITEM_CAPACITY))
+        if (gItems[itemId].pocket == POCKET_ITEMS && CheckBagHasSpace(itemId, MAX_BAG_ITEM_CAPACITY))
             AddBagItem(itemId, MAX_BAG_ITEM_CAPACITY);
     }
 }
@@ -3799,9 +3804,27 @@ static void DebugAction_Fill_PocketKeyItems(u8 taskId)
 
     for (itemId = 1; itemId < ITEMS_COUNT; itemId++)
     {
-        if (ItemId_GetPocket(itemId) == POCKET_KEY_ITEMS && CheckBagHasSpace(itemId, 1))
+        if (gItems[itemId].pocket == POCKET_KEY_ITEMS && CheckBagHasSpace(itemId, 1))
             AddBagItem(itemId, 1);
     }
+}
+static void DebugAction_Fill_PCBoxes_Empty(u8 taskId)
+{
+    int boxId, boxPosition;
+
+    for (boxId = 0; boxId < TOTAL_BOXES_COUNT; boxId++)
+    {
+        for (boxPosition = 0; boxPosition < IN_BOX_COUNT; boxPosition++)
+        {
+            if (GetBoxMonData(&gPokemonStoragePtr->boxes[boxId][boxPosition], MON_DATA_SANITY_HAS_SPECIES))
+            {
+                ZeroBoxMonAt(boxId, boxPosition);
+            }
+        }
+    }
+
+    Debug_DestroyMenu_Full(taskId);
+    ScriptContext_Enable();
 }
 
 // *******************************

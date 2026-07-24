@@ -120,6 +120,7 @@ static bool8 FindMonThatAbsorbsOpponentsMove(void)
 {
     u8 battlerIn1, battlerIn2;
     u8 absorbingTypeAbility;
+    u8 absorbingTypeAbility2;
     s32 firstId;
     s32 lastId; // + 1
     struct Pokemon *party;
@@ -149,15 +150,24 @@ static bool8 FindMonThatAbsorbsOpponentsMove(void)
     }
 
     if (gBattleMoves[gLastLandedMoves[gActiveBattler]].type == TYPE_FIRE)
+    {
         absorbingTypeAbility = ABILITY_FLASH_FIRE;
+        absorbingTypeAbility2 = ABILITY_FLASH_FIRE;
+    }
     else if (gBattleMoves[gLastLandedMoves[gActiveBattler]].type == TYPE_WATER)
+    {
         absorbingTypeAbility = ABILITY_WATER_ABSORB;
+        absorbingTypeAbility2 = ABILITY_DRY_SKIN;
+    }
     else if (gBattleMoves[gLastLandedMoves[gActiveBattler]].type == TYPE_ELECTRIC)
+    {
         absorbingTypeAbility = ABILITY_VOLT_ABSORB;
+        absorbingTypeAbility2 = ABILITY_VOLT_ABSORB;
+    }
     else
         return FALSE;
 
-    if (gBattleMons[gActiveBattler].ability == absorbingTypeAbility)
+    if (gBattleMons[gActiveBattler].ability == absorbingTypeAbility || gBattleMons[gActiveBattler].ability == absorbingTypeAbility2)
         return FALSE;
 
     if (gBattleTypeFlags & (BATTLE_TYPE_TWO_OPPONENTS | BATTLE_TYPE_TOWER_LINK_MULTI))

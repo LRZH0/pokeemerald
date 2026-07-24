@@ -868,6 +868,6 @@
 //       MAX_TRAINERS_COUNT can be increased but will take up additional saveblock space
 
 #define TRAINERS_COUNT                      861
-#define MAX_TRAINERS_COUNT                  864
+#define MAX_TRAINERS_COUNT                  900
 
 #endif  // GUARD_CONSTANTS_OPPONENTS_H

@@ -70,7 +70,7 @@ static void Task_PlayMapChosenOrBattleBGM(u8 taskId);
 static bool8 ShouldGetStatBadgeBoost(u16 flagId, u8 battler);
 static u16 GiveMoveToBoxMon(struct BoxPokemon *boxMon, u16 move);
 static bool8 ShouldSkipFriendshipChange(void);
-static u8 CopyMonToPC(struct Pokemon *mon);
+u8 CopyMonToPC(struct Pokemon *mon);
 
 EWRAM_DATA static u8 sLearningMoveTableID = 0;
 EWRAM_DATA u8 gPlayerPartyCount = 0;
@@ -519,6 +519,13 @@ static const u16 sSpeciesToHoennPokedexNum[NUM_SPECIES - 1] =
     SPECIES_TO_HOENN(DEOXYS),
     SPECIES_TO_HOENN(CHIMECHO),
     SPECIES_TO_HOENN(DHELMISE),
+    SPECIES_TO_HOENN(CROAGUNK),
+    SPECIES_TO_HOENN(TOXICROAK),
+    SPECIES_TO_HOENN(SKRELP),
+    SPECIES_TO_HOENN(DRAGALGE),
+    SPECIES_TO_HOENN(GALLADE),
+    SPECIES_TO_HOENN(PROBOPASS),
+    SPECIES_TO_HOENN(MAGNEZONE),
 };
 
 // Assigns all species to the National Dex Index (Summary No. for National Dex)
@@ -936,6 +943,14 @@ static const u16 sSpeciesToNationalPokedexNum[NUM_SPECIES - 1] =
     SPECIES_TO_NATIONAL(DEOXYS),
     SPECIES_TO_NATIONAL(CHIMECHO),
     SPECIES_TO_NATIONAL(DHELMISE),
+    SPECIES_TO_NATIONAL(CROAGUNK),
+    SPECIES_TO_NATIONAL(TOXICROAK),
+    SPECIES_TO_NATIONAL(SKRELP),
+    SPECIES_TO_NATIONAL(DRAGALGE),
+    SPECIES_TO_NATIONAL(GALLADE),
+    SPECIES_TO_NATIONAL(PROBOPASS),
+    SPECIES_TO_NATIONAL(MAGNEZONE),
+    SPECIES_TO_NATIONAL(SQUID),
 };
 
 // Assigns all Hoenn Dex Indexes to a National Dex Index
@@ -972,6 +987,7 @@ static const u16 sHoennToNationalOrder[NUM_SPECIES - 1] =
     HOENN_TO_NATIONAL(RALTS),
     HOENN_TO_NATIONAL(KIRLIA),
     HOENN_TO_NATIONAL(GARDEVOIR),
+    HOENN_TO_NATIONAL(GALLADE),
     HOENN_TO_NATIONAL(SURSKIT),
     HOENN_TO_NATIONAL(MASQUERAIN),
     HOENN_TO_NATIONAL(SHROOMISH),
@@ -1001,6 +1017,7 @@ static const u16 sHoennToNationalOrder[NUM_SPECIES - 1] =
     HOENN_TO_NATIONAL(GRAVELER),
     HOENN_TO_NATIONAL(GOLEM),
     HOENN_TO_NATIONAL(NOSEPASS),
+    HOENN_TO_NATIONAL(PROBOPASS),
     HOENN_TO_NATIONAL(SKITTY),
     HOENN_TO_NATIONAL(DELCATTY),
     HOENN_TO_NATIONAL(ZUBAT),
@@ -1024,6 +1041,7 @@ static const u16 sHoennToNationalOrder[NUM_SPECIES - 1] =
     HOENN_TO_NATIONAL(MINUN),
     HOENN_TO_NATIONAL(MAGNEMITE),
     HOENN_TO_NATIONAL(MAGNETON),
+    HOENN_TO_NATIONAL(MAGNEZONE),
     HOENN_TO_NATIONAL(VOLTORB),
     HOENN_TO_NATIONAL(ELECTRODE),
     HOENN_TO_NATIONAL(VOLBEAT),
@@ -1080,11 +1098,15 @@ static const u16 sHoennToNationalOrder[NUM_SPECIES - 1] =
     HOENN_TO_NATIONAL(IGGLYBUFF),
     HOENN_TO_NATIONAL(JIGGLYPUFF),
     HOENN_TO_NATIONAL(WIGGLYTUFF),
+    HOENN_TO_NATIONAL(CROAGUNK),
+    HOENN_TO_NATIONAL(TOXICROAK),
     HOENN_TO_NATIONAL(FEEBAS),
     HOENN_TO_NATIONAL(MILOTIC),
     HOENN_TO_NATIONAL(CASTFORM),
     HOENN_TO_NATIONAL(STARYU),
     HOENN_TO_NATIONAL(STARMIE),
+    HOENN_TO_NATIONAL(SKRELP),
+    HOENN_TO_NATIONAL(DRAGALGE),
     HOENN_TO_NATIONAL(KECLEON),
     HOENN_TO_NATIONAL(SHUPPET),
     HOENN_TO_NATIONAL(BANETTE),
@@ -1134,6 +1156,7 @@ static const u16 sHoennToNationalOrder[NUM_SPECIES - 1] =
     HOENN_TO_NATIONAL(BELDUM),
     HOENN_TO_NATIONAL(METANG),
     HOENN_TO_NATIONAL(METAGROSS),
+    HOENN_TO_NATIONAL(SQUID),
     HOENN_TO_NATIONAL(REGIROCK),
     HOENN_TO_NATIONAL(REGICE),
     HOENN_TO_NATIONAL(REGISTEEL),
@@ -1794,6 +1817,14 @@ static const u8 sMonFrontAnimIdsTable[NUM_SPECIES - 1] =
     [SPECIES_DEOXYS - 1]      = ANIM_H_PIVOT,
     [SPECIES_CHIMECHO - 1]    = ANIM_H_SLIDE_WOBBLE,
     [SPECIES_DHELMISE - 1]    = ANIM_SWING_CONVEX,
+    [SPECIES_CROAGUNK - 1]    = ANIM_RAPID_H_HOPS,
+    [SPECIES_TOXICROAK - 1]   = ANIM_V_SQUISH_AND_BOUNCE,
+    [SPECIES_SKRELP - 1]      = ANIM_V_SLIDE_WOBBLE_SMALL,
+    [SPECIES_DRAGALGE - 1]    = ANIM_FRONT_FLIP,
+    [SPECIES_GALLADE - 1]     = ANIM_H_VIBRATE,
+    [SPECIES_PROBOPASS - 1]   = ANIM_V_SLIDE,
+    [SPECIES_MAGNEZONE - 1]   = ANIM_H_SLIDE_WOBBLE,
+    [SPECIES_SQUID - 1]       = ANIM_SWING_CONVEX_FAST_SHORT,
 };
 
 static const u8 sMonAnimationDelayTable[NUM_SPECIES - 1] =
@@ -3206,6 +3237,8 @@ s32 CalculateBaseDamage(struct BattlePokemon *attacker, struct BattlePokemon *de
     // Apply abilities / field sports
     if (defender->ability == ABILITY_THICK_FAT && (type == TYPE_FIRE || type == TYPE_ICE))
         spAttack /= 2;
+    if (defender->ability == ABILITY_DRY_SKIN && type == TYPE_FIRE)
+        gBattleMovePower = (125 * gBattleMovePower) / 100;
     if (attacker->ability == ABILITY_HUSTLE)
         attack = (150 * attack) / 100;
     if (attacker->ability == ABILITY_PLUS && ABILITY_ON_FIELD2(ABILITY_MINUS))
@@ -4452,7 +4485,7 @@ u8 GiveMonToPlayer(struct Pokemon *mon)
     return MON_GIVEN_TO_PARTY;
 }
 
-static u8 CopyMonToPC(struct Pokemon *mon)
+u8 CopyMonToPC(struct Pokemon *mon)
 {
     s32 boxNo, boxPos;
 

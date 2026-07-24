@@ -413,4 +413,12 @@ const u16 *const gLevelUpLearnsets[NUM_SPECIES] =
     [SPECIES_DEOXYS] = sDeoxysLevelUpLearnset,
     [SPECIES_CHIMECHO] = sChimechoLevelUpLearnset,
     [SPECIES_DHELMISE] = sDhelmiseLevelUpLearnset,
+    [SPECIES_CROAGUNK] = sCroagunkLevelUpLearnset,
+    [SPECIES_TOXICROAK] = sToxicroakLevelUpLearnset,
+    [SPECIES_SKRELP] = sSkrelpLevelUpLearnset,
+    [SPECIES_DRAGALGE] = sDragalgeLevelUpLearnset,
+    [SPECIES_GALLADE] = sGalladeLevelUpLearnset,
+    [SPECIES_PROBOPASS] = sProbopassLevelUpLearnset,
+    [SPECIES_MAGNEZONE] = sMagnezoneLevelUpLearnset,
+    [SPECIES_SQUID] = sSquidLevelUpLearnset,
 };

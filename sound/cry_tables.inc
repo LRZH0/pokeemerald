@@ -389,6 +389,14 @@ gCryTable::
 	cry Cry_Deoxys
 	cry Cry_Chimecho
 	cry Cry_Dhelmise
+	cry Cry_Croagunk
+	cry Cry_Toxicroak
+	cry Cry_Skrelp
+	cry Cry_Dragalge
+	cry Cry_Gallade
+	cry Cry_Probopass
+	cry Cry_Magnezone
+	cry Cry_Squid
 
 	.align 2
 gCryTable_Reverse::
@@ -781,3 +789,11 @@ gCryTable_Reverse::
 	cry_reverse Cry_Deoxys
 	cry_reverse Cry_Chimecho
 	cry_reverse Cry_Dhelmise
+	cry_reverse Cry_Croagunk
+	cry_reverse Cry_Toxicroak
+	cry_reverse Cry_Skrelp
+	cry_reverse Cry_Dragalge
+	cry_reverse Cry_Gallade
+	cry_reverse Cry_Probopass
+	cry_reverse Cry_Magnezone
+	cry_reverse Cry_Squid

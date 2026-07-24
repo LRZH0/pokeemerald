@@ -59,6 +59,7 @@ AI_CBM_CheckIfNegatesType:
 	get_ability AI_TARGET
 	if_equal ABILITY_VOLT_ABSORB, CheckIfVoltAbsorbCancelsElectric
 	if_equal ABILITY_WATER_ABSORB, CheckIfWaterAbsorbCancelsWater
+	if_equal ABILITY_DRY_SKIN, CheckIfWaterAbsorbCancelsWater
 	if_equal ABILITY_FLASH_FIRE, CheckIfFlashFireCancelsFire
 	if_equal ABILITY_WONDER_GUARD, CheckIfWonderGuardCancelsMove
 	if_equal ABILITY_LEVITATE, CheckIfLevitateCancelsGroundMove
@@ -2046,6 +2047,7 @@ AI_CV_RainDance2:
 	if_equal AI_WEATHER_SANDSTORM, AI_CV_RainDance3
 	get_ability AI_USER
 	if_equal ABILITY_RAIN_DISH, AI_CV_RainDance3
+	if_equal ABILITY_DRY_SKIN, AI_CV_RainDance3
 	goto AI_CV_RainDance_End
 
 AI_CV_RainDance3:
@@ -2387,6 +2389,8 @@ AI_CV_ChangeSelfAbility_AbilitiesToEncourage:
 	.byte ABILITY_PURE_POWER
 	.byte ABILITY_CHLOROPHYLL
 	.byte ABILITY_SHIELD_DUST
+	.byte ABILITY_SOLID_ROCK
+	.byte ABILITY_SNOW_CLOAK
 	.byte -1
 
 AI_CV_Superpower:

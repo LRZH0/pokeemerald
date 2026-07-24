@@ -2325,3 +2325,51 @@ const u8 gDhelmisePokedexText[] = _(
     "extraterrestrial virus exposed to a laser\n"
     "beam. Its body is configured for superior\n"
     "agility and speed.");
+
+const u8 gCroagunkPokedexText[] = _(
+    "A POKéMON that mutated from an\n"
+    "extraterrestrial virus exposed to a laser\n"
+    "beam. Its body is configured for superior\n"
+    "agility and speed.");
+
+const u8 gToxicroakPokedexText[] = _(
+    "A POKéMON that mutated from an\n"
+    "extraterrestrial virus exposed to a laser\n"
+    "beam. Its body is configured for superior\n"
+    "agility and speed.");
+
+const u8 gSkrelpPokedexText[] = _(
+    "A POKéMON that mutated from an\n"
+    "extraterrestrial virus exposed to a laser\n"
+    "beam. Its body is configured for superior\n"
+    "agility and speed.");
+
+const u8 gDragalgePokedexText[] = _(
+    "A POKéMON that mutated from an\n"
+    "extraterrestrial virus exposed to a laser\n"
+    "beam. Its body is configured for superior\n"
+    "agility and speed.");
+
+const u8 gGalladePokedexText[] = _(
+    "A POKéMON that mutated from an\n"
+    "extraterrestrial virus exposed to a laser\n"
+    "beam. Its body is configured for superior\n"
+    "agility and speed.");
+
+const u8 gProbopassPokedexText[] = _(
+    "A POKéMON that mutated from an\n"
+    "extraterrestrial virus exposed to a laser\n"
+    "beam. Its body is configured for superior\n"
+    "agility and speed.");
+
+const u8 gMagnezonePokedexText[] = _(
+    "A POKéMON that mutated from an\n"
+    "extraterrestrial virus exposed to a laser\n"
+    "beam. Its body is configured for superior\n"
+    "agility and speed.");
+
+const u8 gSquidPokedexText[] = _(
+    "A POKéMON that mutated from an\n"
+    "extraterrestrial virus exposed to a laser\n"
+    "beam. Its body is configured for superior\n"
+    "agility and speed.");

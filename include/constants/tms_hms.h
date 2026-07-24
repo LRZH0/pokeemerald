@@ -51,7 +51,10 @@
     F(STEEL_WING) \
     F(SKILL_SWAP) \
     F(SNATCH) \
-    F(OVERHEAT)
+    F(OVERHEAT) \
+    F(LEECH_LIFE) \
+    F(SNARL)/* \
+    F(FROST_BREATH)*/
 
 #define FOREACH_HM(F) \
     F(CUT) \

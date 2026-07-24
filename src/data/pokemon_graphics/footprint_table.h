@@ -413,5 +413,13 @@ const u8 *const gMonFootprintTable[] =
     [SPECIES_DEOXYS] = gMonFootprint_Deoxys,
     [SPECIES_CHIMECHO] = gMonFootprint_Chimecho,
     [SPECIES_DHELMISE] = gMonFootprint_Dhelmise,
+    [SPECIES_CROAGUNK] = gMonFootprint_Croagunk,
+    [SPECIES_TOXICROAK] = gMonFootprint_Toxicroak,
+    [SPECIES_SKRELP] = gMonFootprint_Skrelp,
+    [SPECIES_DRAGALGE] = gMonFootprint_Dragalge,
+    [SPECIES_GALLADE] = gMonFootprint_Gallade,
+    [SPECIES_PROBOPASS] = gMonFootprint_Probopass,
+    [SPECIES_MAGNEZONE] = gMonFootprint_Magnezone,
+    [SPECIES_SQUID] = gMonFootprint_Squid,
     [SPECIES_EGG] = gMonFootprint_Bulbasaur,
 };

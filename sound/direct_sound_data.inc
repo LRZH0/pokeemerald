@@ -1943,6 +1943,38 @@ Cry_Dhelmise::
 	.incbin "sound/direct_sound_samples/cries/dhelmise.bin"
 
 	.align 2
+Cry_Croagunk::
+	.incbin "sound/direct_sound_samples/cries/croagunk.bin"
+
+	.align 2
+Cry_Toxicroak::
+	.incbin "sound/direct_sound_samples/cries/toxicroak.bin"
+
+	.align 2
+Cry_Skrelp::
+	.incbin "sound/direct_sound_samples/cries/skrelp.bin"
+
+	.align 2
+Cry_Dragalge::
+	.incbin "sound/direct_sound_samples/cries/dragalge.bin"
+
+	.align 2
+Cry_Gallade::
+	.incbin "sound/direct_sound_samples/cries/gallade.bin"
+
+	.align 2
+Cry_Probopass::
+	.incbin "sound/direct_sound_samples/cries/probopass.bin"
+
+	.align 2
+Cry_Magnezone::
+	.incbin "sound/direct_sound_samples/cries/magnezone.bin"
+
+	.align 2
+Cry_Squid::
+	.incbin "sound/direct_sound_samples/cries/mantine.bin"
+
+	.align 2
 DirectSoundWaveData_register_noise::
 	.incbin "sound/direct_sound_samples/register_noise.bin"
 

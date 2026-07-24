@@ -1047,6 +1047,70 @@ static const struct InGameTrade sIngameTrades[] =
         .otGender = FEMALE,
         .sheen = 10,
         .requestedSpecies = SPECIES_SKITTY
+    },
+    [INGAME_TRADE_MAKUHITA] =
+    {
+        .nickname = _("MAKIT"),
+        .species = SPECIES_MAKUHITA,
+        .ivs = {5, 5, 4, 4, 4, 4},
+        .abilityNum = 1,
+        .otId = 49562,
+        .conditions = {5, 5, 5, 5, 30},
+        .personality = 0x9C40,
+        .heldItem = ITEM_X_ATTACK,
+        .mailNum = -1,
+        .otName = _("ELYSSA"),
+        .otGender = MALE,
+        .sheen = 10,
+        .requestedSpecies = SPECIES_SLAKOTH
+    },
+    [INGAME_TRADE_SKITTY] =
+    {
+        .nickname = _("SKITIT"),
+        .species = SPECIES_SKITTY,
+        .ivs = {5, 4, 4, 5, 4, 4},
+        .abilityNum = 0,
+        .otId = 2259,
+        .conditions = {5, 5, 30, 5, 5},
+        .personality = 0x498A2E17,
+        .heldItem = ITEM_GLITTER_MAIL,
+        .mailNum = 3,
+        .otName = _("DARRELL"),
+        .otGender = FEMALE,
+        .sheen = 10,
+        .requestedSpecies = SPECIES_PIKACHU
+    },
+    [INGAME_TRADE_CORSOLA] =
+    {
+        .nickname = _("COROSO"),
+        .species = SPECIES_CORSOLA,
+        .ivs = {4, 4, 5, 4, 4, 5},
+        .abilityNum = 1,
+        .otId = 50183,
+        .conditions = {5, 30, 5, 5, 5},
+        .personality = 0x4C970B7F,
+        .heldItem = ITEM_TROPIC_MAIL,
+        .mailNum = 4,
+        .otName = _("LANE"),
+        .otGender = FEMALE,
+        .sheen = 10,
+        .requestedSpecies = SPECIES_BELLOSSOM
+    },
+    [INGAME_TRADE_CROAGUNK] =
+    {
+        .nickname = _("CRANK"),
+        .species = SPECIES_CROAGUNK,
+        .ivs = {4, 5, 4, 5, 4, 4},
+        .abilityNum = 0,
+        .otId = 19131,
+        .conditions = {30, 5, 5, 5, 5},
+        .personality = 0x7B,
+        .heldItem = ITEM_BEAD_MAIL,
+        .mailNum = 5,
+        .otName = _("MICHEL"),
+        .otGender = MALE,
+        .sheen = 10,
+        .requestedSpecies = SPECIES_MEDITITE
     }
 };
 
@@ -1082,6 +1146,36 @@ static const u16 sIngameTradeMail[][MAIL_WORDS_COUNT + 1] =
         EC_WORD_A,
         EC_WORD_CUTE,
         EC_WORD_WAY
+    }, {
+        EC_POKEMON(PIKACHU),
+        EC_WORD_THANK_YOU,
+        EC_WORD_EXCL,
+        EC_WORD_MY,
+        EC_POKEMON(SKITTY),
+        EC_WORD_EATS,
+        EC_WORD_A_LOT,
+        EC_WORD_NOW,
+        EC_WORD_EXCL
+    }, {
+        EC_WORD_I,
+        EC_WORD_WANT,
+        EC_WORD_TO,
+        EC_WORD_SEE,
+        EC_WORD_A,
+        EC_MOVE2(PETAL_DANCE),
+        EC_WORD_IT_S,
+        EC_WORD_SO,
+        EC_WORD_PRETTY
+    }, {
+        EC_WORD_I,
+        EC_WORD_I,
+        EC_WORD_I,
+        EC_WORD_I,
+        EC_WORD_I,
+        EC_WORD_I,
+        EC_WORD_I,
+        EC_WORD_I,
+        EC_WORD_I
     }
 };
 

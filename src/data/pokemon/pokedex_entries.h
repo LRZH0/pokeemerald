@@ -4655,4 +4655,100 @@ const struct PokedexEntry gPokedexEntries[] =
         .trainerScale = 290,
         .trainerOffset = 2,
     },
+
+    [NATIONAL_DEX_CROAGUNK] =
+    {
+        .categoryName = _("DNA"),
+        .height = 17,
+        .weight = 608,
+        .description = gCroagunkPokedexText,
+        .pokemonScale = 256,
+        .pokemonOffset = 0,
+        .trainerScale = 290,
+        .trainerOffset = 2,
+    },
+
+    [NATIONAL_DEX_TOXICROAK] =
+    {
+        .categoryName = _("DNA"),
+        .height = 17,
+        .weight = 608,
+        .description = gToxicroakPokedexText,
+        .pokemonScale = 256,
+        .pokemonOffset = 0,
+        .trainerScale = 290,
+        .trainerOffset = 2,
+    },
+
+    [NATIONAL_DEX_SKRELP] =
+    {
+        .categoryName = _("DNA"),
+        .height = 17,
+        .weight = 608,
+        .description = gSkrelpPokedexText,
+        .pokemonScale = 256,
+        .pokemonOffset = 0,
+        .trainerScale = 290,
+        .trainerOffset = 2,
+    },
+
+    [NATIONAL_DEX_DRAGALGE] =
+    {
+        .categoryName = _("DNA"),
+        .height = 17,
+        .weight = 608,
+        .description = gDragalgePokedexText,
+        .pokemonScale = 256,
+        .pokemonOffset = 0,
+        .trainerScale = 290,
+        .trainerOffset = 2,
+    },
+
+    [NATIONAL_DEX_GALLADE] =
+    {
+        .categoryName = _("DNA"),
+        .height = 17,
+        .weight = 608,
+        .description = gGalladePokedexText,
+        .pokemonScale = 256,
+        .pokemonOffset = 0,
+        .trainerScale = 290,
+        .trainerOffset = 2,
+    },
+
+    [NATIONAL_DEX_PROBOPASS] =
+    {
+        .categoryName = _("DNA"),
+        .height = 17,
+        .weight = 608,
+        .description = gProbopassPokedexText,
+        .pokemonScale = 256,
+        .pokemonOffset = 0,
+        .trainerScale = 290,
+        .trainerOffset = 2,
+    },
+
+    [NATIONAL_DEX_MAGNEZONE] =
+    {
+        .categoryName = _("DNA"),
+        .height = 17,
+        .weight = 608,
+        .description = gMagnezonePokedexText,
+        .pokemonScale = 256,
+        .pokemonOffset = 0,
+        .trainerScale = 290,
+        .trainerOffset = 2,
+    },
+
+    [NATIONAL_DEX_SQUID] =
+    {
+        .categoryName = _("DNA"),
+        .height = 17,
+        .weight = 608,
+        .description = gSquidPokedexText,
+        .pokemonScale = 256,
+        .pokemonOffset = 0,
+        .trainerScale = 290,
+        .trainerOffset = 2,
+    },
 };

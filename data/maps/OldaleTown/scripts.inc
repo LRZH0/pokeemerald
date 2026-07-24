@@ -294,7 +294,7 @@ OldaleTown_EventScript_DoExitMovement2::
 	return
 
 OldaleTown_EventScript_Test::
-	trainerbattle_single TRAINER_TEST, OldaleTown_Text_TestIntro, OldaleTown_Text_TestDefeated
+	trainerbattle_single TRAINER_PHOEBE_2, OldaleTown_Text_TestIntro, OldaleTown_Text_TestDefeated
 	msgbox OldaleTown_Text_TestPostBattle, MSGBOX_DEFAULT
 	release
 	end

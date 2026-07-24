@@ -357,4 +357,5 @@ const u8 gMoveNames[MOVES_COUNT][MOVE_NAME_LENGTH + 1] =
     [MOVE_PSYCHO_BOOST] = _("PSYCHO BOOST"),
     [MOVE_ANCHOR_SHOT] = _("ANCHOR SHOT"),
     [MOVE_POWER_WHIP] = _("POWER WHIP"),
+    [MOVE_SNARL] = _("SNARL"),
 };
