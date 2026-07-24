@@ -330,13 +330,13 @@ BattleArcade_Challenge_EventScript_SaveWarpToLobby::
 	copyvar VAR_RESULT, VAR_FRONTIER_BATTLE_MODE
 	compare VAR_RESULT, FRONTIER_MODE_MULTIS
 	goto_if_eq BattleArcade_Challenge_EventScript_SaveWarpToLobby_2
-	@ warpsilent MAP_BATTLE_ARCADE_LOBBY, 5, 6
+	warpsilent MAP_BATTLE_ARCADE_LOBBY, 5, 6
 BattleArcade_Challenge_EventScript_SaveWarpToLobby_1:
 	waitstate
 	end
 
 BattleArcade_Challenge_EventScript_SaveWarpToLobby_2:
-	@ warpsilent MAP_BATTLE_ARCADE_LOBBY, 6, 6
+	warpsilent MAP_BATTLE_ARCADE_LOBBY, 6, 6
 	goto BattleArcade_Challenge_EventScript_SaveWarpToLobby_1
 
 

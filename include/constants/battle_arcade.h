@@ -86,8 +86,8 @@ enum ArcadeSymbol
     ARCADE_SYMBOL_GOLD
 };
 
-#define FLAG_ARCADE_SILVER_PRINT                FLAG_UNUSED_0x020
-#define FLAG_ARCADE_GOLD_PRINT                  FLAG_UNUSED_0x021
+#define FLAG_ARCADE_SILVER_PRINT                FLAG_SYS_ARCADE_SILVER
+#define FLAG_ARCADE_GOLD_PRINT                  FLAG_SYS_ARCADE_GOLD
 
 #define ARCADE_TILEMAP_BUFFER_SIZE              1024 * 2
 

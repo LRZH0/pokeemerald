@@ -65,6 +65,7 @@ enum
     MAP_UNDERWATER_ROUTE129 = (54 | (0 << 8)),
     MAP_UNDERWATER_ROUTE105 = (55 | (0 << 8)),
     MAP_UNDERWATER_ROUTE125 = (56 | (0 << 8)),
+    MAP_UNDERWATER_ROUTE133 = (57 | (0 << 8)),
 
     // gMapGroup_IndoorLittleroot
     MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F    = (0 | (1 << 8)),
@@ -151,6 +152,7 @@ enum
     MAP_SLATEPORT_CITY_POKEMON_CENTER_1F       = (11 | (9 << 8)),
     MAP_SLATEPORT_CITY_POKEMON_CENTER_2F       = (12 | (9 << 8)),
     MAP_SLATEPORT_CITY_MART                    = (13 | (9 << 8)),
+    MAP_SLATEPORT_CITY_DEBUG_HOUSE             = (14 | (9 << 8)),
 
     // gMapGroup_IndoorMauville
     MAP_MAUVILLE_CITY_GYM               = (0 | (10 << 8)),
@@ -596,5 +598,7 @@ enum
 };
 
 #define MAP_GROUPS_COUNT 34
+
+// static const u8 MAP_GROUP_COUNT[] = {58, 5, 5, 6, 7, 8, 9, 7, 7, 15, 8, 17, 10, 23, 13, 15, 15, 2, 2, 2, 3, 1, 1, 1, 108, 61, 89, 2, 1, 13, 1, 1, 3, 1, 0};
 
 #endif // GUARD_CONSTANTS_MAP_GROUPS_H
