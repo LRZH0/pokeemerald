@@ -1230,6 +1230,22 @@
       "y": 4,
       "width": 1,
       "height": 1
+    },
+    {
+      "id": "MAPSEC_UNDERWATER_133",
+      "name": "UNDERWATER",
+      "x": 12,
+      "y": 10,
+      "width": 3,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_MOUNTAIN_LAIR",
+      "name": "MOUNTAIN LAIR",
+      "x": 0,
+      "y": 2,
+      "width": 1,
+      "height": 1
     }
   ]
 }

@@ -665,6 +665,7 @@ static const u8 *const sMoveEffectBS_Ptrs[] =
     [MOVE_EFFECT_ALL_STATS_UP]     = BattleScript_MoveEffectSleep,
     [MOVE_EFFECT_RAPIDSPIN]        = BattleScript_MoveEffectSleep,
     [MOVE_EFFECT_REMOVE_PARALYSIS] = BattleScript_MoveEffectSleep,
+    [MOVE_EFFECT_REMOVE_SLEEP]     = BattleScript_MoveEffectSleep,
     [MOVE_EFFECT_ATK_DEF_DOWN]     = BattleScript_MoveEffectSleep,
     [MOVE_EFFECT_RECOIL_33]        = BattleScript_MoveEffectRecoil,
 };
@@ -2840,6 +2841,23 @@ void SetMoveEffect(bool8 primary, u8 certain)
                 else
                 {
                     gBattleMons[gBattlerTarget].status1 &= ~STATUS1_PARALYSIS;
+
+                    gActiveBattler = gBattlerTarget;
+                    BtlController_EmitSetMonData(B_COMM_TO_CONTROLLER, REQUEST_STATUS_BATTLE, 0, sizeof(gBattleMons[gActiveBattler].status1), &gBattleMons[gActiveBattler].status1);
+                    MarkBattlerForControllerExec(gActiveBattler);
+
+                    BattleScriptPush(gBattlescriptCurrInstr + 1);
+                    gBattlescriptCurrInstr = BattleScript_TargetPRLZHeal;
+                }
+                break;
+            case MOVE_EFFECT_REMOVE_SLEEP: // Wake-Up Slap
+                if (!(gBattleMons[gBattlerTarget].status1 & STATUS1_SLEEP))
+                {
+                    gBattlescriptCurrInstr++;
+                }
+                else
+                {
+                    gBattleMons[gBattlerTarget].status1 &= ~STATUS1_SLEEP;
 
                     gActiveBattler = gBattlerTarget;
                     BtlController_EmitSetMonData(B_COMM_TO_CONTROLLER, REQUEST_STATUS_BATTLE, 0, sizeof(gBattleMons[gActiveBattler].status1), &gBattleMons[gActiveBattler].status1);

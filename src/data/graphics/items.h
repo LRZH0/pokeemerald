@@ -200,6 +200,15 @@ const u32 gItemIconPalette_WaterStone[] = INCGFX_U32("graphics/items/icon_palett
 const u32 gItemIcon_LeafStone[] = INCGFX_U32("graphics/items/icons/leaf_stone.png", ".4bpp.lz");
 const u32 gItemIconPalette_LeafStone[] = INCGFX_U32("graphics/items/icon_palettes/leaf_stone.pal", ".gbapal.lz");
 
+const u32 gItemIcon_DawnStone[] = INCGFX_U32("graphics/items/icons/dawn_stone.png", ".4bpp.lz");
+const u32 gItemIconPalette_DawnStone[] = INCGFX_U32("graphics/items/icon_palettes/dawn_stone.pal", ".gbapal.lz");
+
+const u32 gItemIcon_DuskStone[] = INCGFX_U32("graphics/items/icons/dusk_stone.png", ".4bpp.lz");
+const u32 gItemIconPalette_DuskStone[] = INCGFX_U32("graphics/items/icon_palettes/dusk_stone.pal", ".gbapal.lz");
+
+const u32 gItemIcon_ShinyStone[] = INCGFX_U32("graphics/items/icons/shiny_stone.png", ".4bpp.lz");
+const u32 gItemIconPalette_ShinyStone[] = INCGFX_U32("graphics/items/icon_palettes/shiny_stone.pal", ".gbapal.lz");
+
 // Valuables
 
 const u32 gItemIcon_TinyMushroom[] = INCGFX_U32("graphics/items/icons/tiny_mushroom.png", ".4bpp.lz");
@@ -517,6 +526,12 @@ const u32 gItemIconPalette_SeaIncense[] = INCGFX_U32("graphics/items/icon_palett
 const u32 gItemIcon_LaxIncense[] = INCGFX_U32("graphics/items/icons/lax_incense.png", ".4bpp.lz");
 const u32 gItemIconPalette_LaxIncense[] = INCGFX_U32("graphics/items/icon_palettes/lax_incense.pal", ".gbapal.lz");
 
+const u32 gItemIcon_PureIncense[] = INCGFX_U32("graphics/items/icons/pure_incense.png", ".4bpp.lz");
+const u32 gItemIconPalette_PureIncense[] = INCGFX_U32("graphics/items/icon_palettes/pure_incense.pal", ".gbapal.lz");
+
+const u32 gItemIcon_RoseIncense[] = INCGFX_U32("graphics/items/icons/rose_incense.png", ".4bpp.lz");
+const u32 gItemIconPalette_RoseIncense[] = INCGFX_U32("graphics/items/icon_palettes/rose_incense.pal", ".gbapal.lz");
+
 const u32 gItemIcon_LuckyPunch[] = INCGFX_U32("graphics/items/icons/lucky_punch.png", ".4bpp.lz");
 const u32 gItemIconPalette_LuckyPunch[] = INCGFX_U32("graphics/items/icon_palettes/lucky_punch.pal", ".gbapal.lz");
 
@@ -528,6 +543,18 @@ const u32 gItemIconPalette_ThickClub[] = INCGFX_U32("graphics/items/icon_palette
 
 const u32 gItemIcon_Stick[] = INCGFX_U32("graphics/items/icons/stick.png", ".4bpp.lz");
 const u32 gItemIconPalette_Stick[] = INCGFX_U32("graphics/items/icon_palettes/stick.pal", ".gbapal.lz");
+
+const u32 gItemIcon_DampRock[] = INCGFX_U32("graphics/items/icons/damp_rock.png", ".4bpp.lz");
+const u32 gItemIconPalette_DampRock[] = INCGFX_U32("graphics/items/icon_palettes/damp_rock.pal", ".gbapal.lz");
+
+const u32 gItemIcon_HeatRock[] = INCGFX_U32("graphics/items/icons/heat_rock.png", ".4bpp.lz");
+const u32 gItemIconPalette_HeatRock[] = INCGFX_U32("graphics/items/icon_palettes/heat_rock.pal", ".gbapal.lz");
+
+const u32 gItemIcon_IcyRock[] = INCGFX_U32("graphics/items/icons/icy_rock.png", ".4bpp.lz");
+const u32 gItemIconPalette_IcyRock[] = INCGFX_U32("graphics/items/icon_palettes/icy_rock.pal", ".gbapal.lz");
+
+const u32 gItemIcon_SmoothRock[] = INCGFX_U32("graphics/items/icons/smooth_rock.png", ".4bpp.lz");
+const u32 gItemIconPalette_SmoothRock[] = INCGFX_U32("graphics/items/icon_palettes/smooth_rock.pal", ".gbapal.lz");
 
 const u32 gItemIcon_Scarf[] = INCGFX_U32("graphics/items/icons/scarf.png", ".4bpp.lz");
 const u32 gItemIconPalette_RedScarf[] = INCGFX_U32("graphics/items/icon_palettes/red_scarf.pal", ".gbapal.lz");

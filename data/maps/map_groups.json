@@ -431,7 +431,8 @@
     "TerraCave_Entrance",
     "TerraCave_End",
     "AlteringCave",
-    "MeteorFalls_StevensCave"
+    "MeteorFalls_StevensCave",
+    "MountainLair"
   ],
   "gMapGroup_IndoorDynamic": [
     "SecretBase_RedCave1",
@@ -585,7 +586,10 @@
     "NavelRock_Down10",
     "NavelRock_Down11",
     "NavelRock_Bottom",
-    "TrainerHill_Elevator"
+    "TrainerHill_Elevator",
+    "BattleArcade_BattleRoom",
+    "BattleArcade_Hallway",
+    "BattleArcade_Lobby"
   ],
   "gMapGroup_IndoorRoute104Prototype": [
     "Route104_Prototype",

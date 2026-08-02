@@ -402,6 +402,17 @@ const u32 gMonFrontPic_Gallade[] = INCGFX_U32("graphics/pokemon/gallade/anim_fro
 const u32 gMonFrontPic_Probopass[] = INCGFX_U32("graphics/pokemon/probopass/anim_front.png", ".4bpp.lz");
 const u32 gMonFrontPic_Magnezone[] = INCGFX_U32("graphics/pokemon/magnezone/anim_front.png", ".4bpp.lz");
 const u32 gMonFrontPic_Squid[] = INCGFX_U32("graphics/pokemon/squid/anim_front.png", ".4bpp.lz");
+const u32 gMonFrontPic_Budew[] = INCGFX_U32("graphics/pokemon/budew/anim_front.png", ".4bpp.lz");
+const u32 gMonFrontPic_Roserade[] = INCGFX_U32("graphics/pokemon/roserade/anim_front.png", ".4bpp.lz");
+const u32 gMonFrontPic_Dusknoir[] = INCGFX_U32("graphics/pokemon/dusknoir/anim_front.png", ".4bpp.lz");
+const u32 gMonFrontPic_Chingling[] = INCGFX_U32("graphics/pokemon/chingling/anim_front.png", ".4bpp.lz");
+const u32 gMonFrontPic_Rhyperior[] = INCGFX_U32("graphics/pokemon/rhyperior/anim_front.png", ".4bpp.lz");
+const u32 gMonFrontPic_Froslass[] = INCGFX_U32("graphics/pokemon/froslass/anim_front.png", ".4bpp.lz");
+const u32 gMonFrontPic_Skorupi[] = INCGFX_U32("graphics/pokemon/skorupi/anim_front.png", ".4bpp.lz");
+const u32 gMonFrontPic_Drapion[] = INCGFX_U32("graphics/pokemon/drapion/anim_front.png", ".4bpp.lz");
+const u32 gMonFrontPic_Regieleki[] = INCGFX_U32("graphics/pokemon/regieleki/anim_front.png", ".4bpp.lz");
+const u32 gMonFrontPic_Regidrago[] = INCGFX_U32("graphics/pokemon/regidrago/anim_front.png", ".4bpp.lz");
+const u32 gMonFrontPic_Regigigas[] = INCGFX_U32("graphics/pokemon/regigigas/anim_front.png", ".4bpp.lz");
 
 const u32 gMonFrontPic_Egg[] = INCGFX_U32("graphics/pokemon/egg/anim_front.png", ".4bpp.lz");
 

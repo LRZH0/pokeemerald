@@ -13,6 +13,7 @@
 #include "fldeff.h"
 
 EWRAM_DATA static bool8 sIsRegisteelPuzzle = 0;
+EWRAM_DATA static bool8 sIsRegidragoPuzzle = 0;
 
 static const u8 sRegicePathCoords[][2] =
 {
@@ -57,6 +58,7 @@ static const u8 sRegicePathCoords[][2] =
 static void Task_SealedChamberShakingEffect(u8);
 static void DoBrailleRegirockEffect(void);
 static void DoBrailleRegisteelEffect(void);
+static void DoBrailleRegidragoEffect(void);
 
 bool8 ShouldDoBrailleDigEffect(void)
 {
@@ -260,24 +262,6 @@ static void UNUSED DoBrailleWait(void)
 {
 }
 
-// this used to be FldEff_UseFlyAncientTomb . why did GF merge the 2 functions?
-bool8 FldEff_UsePuzzleEffect(void)
-{
-    u8 taskId = CreateFieldMoveTask();
-
-    if (sIsRegisteelPuzzle == TRUE)
-    {
-        gTasks[taskId].data[8] = (u32)UseRegisteelHm_Callback >> 16;
-        gTasks[taskId].data[9] = (u32)UseRegisteelHm_Callback;
-    }
-    else
-    {
-        gTasks[taskId].data[8] = (u32)UseRegirockHm_Callback >> 16;
-        gTasks[taskId].data[9] = (u32)UseRegirockHm_Callback;
-    }
-    return FALSE;
-}
-
 // The puzzle to unlock Regice's cave requires the player to interact with the braille message on the back wall,
 // step on every space on the perimeter of the cave (and only those spaces) then return to the back wall.
 bool8 ShouldDoBrailleRegicePuzzle(void)
@@ -339,5 +323,94 @@ bool8 ShouldDoBrailleRegicePuzzle(void)
         FlagClear(FLAG_TEMP_REGICE_PUZZLE_STARTED);
     }
 
+    return FALSE;
+}
+
+bool8 ShouldDoBrailleRegidragoEffect(void)
+{
+    if (!FlagGet(FLAG_SYS_REGIDRAGO_PUZZLE_COMPLETED)
+        && gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_MOUNTAIN_LAIR)
+        && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_MOUNTAIN_LAIR))
+    {
+        if (gSaveBlock1Ptr->pos.x == 7 && gSaveBlock1Ptr->pos.y == 24)
+        {
+            sIsRegisteelPuzzle = FALSE;
+            sIsRegidragoPuzzle = TRUE;
+            return TRUE;
+        }
+        else if (gSaveBlock1Ptr->pos.x == 8 && gSaveBlock1Ptr->pos.y == 24)
+        {
+            sIsRegisteelPuzzle = FALSE;
+            sIsRegidragoPuzzle = TRUE;
+            return TRUE;
+        }
+        else if (gSaveBlock1Ptr->pos.x == 9 && gSaveBlock1Ptr->pos.y == 24)
+        {
+            sIsRegisteelPuzzle = FALSE;
+            sIsRegidragoPuzzle = TRUE;
+            return TRUE;
+        }
+    }
+
+    return FALSE;
+}
+
+void SetUpPuzzleEffectRegidrago(void)
+{
+    gFieldEffectArguments[0] = GetCursorSelectionMonId();
+    FieldEffectStart(FLDEFF_USE_TOMB_PUZZLE_EFFECT);
+}
+
+void UseRegidragoHm_Callback(void)
+{
+    FieldEffectActiveListRemove(FLDEFF_USE_TOMB_PUZZLE_EFFECT);
+    DoBrailleRegidragoEffect();
+}
+
+static void DoBrailleRegidragoEffect(void)
+{
+    MapGridSetMetatileIdAt(7 + MAP_OFFSET, 19 + MAP_OFFSET, METATILE_Cave_SealedChamberEntrance_TopLeft);
+    MapGridSetMetatileIdAt(8 + MAP_OFFSET, 19 + MAP_OFFSET, METATILE_Cave_SealedChamberEntrance_TopMid);
+    MapGridSetMetatileIdAt(9 + MAP_OFFSET, 19 + MAP_OFFSET, METATILE_Cave_SealedChamberEntrance_TopRight);
+    MapGridSetMetatileIdAt(7 + MAP_OFFSET, 20 + MAP_OFFSET, METATILE_Cave_SealedChamberEntrance_BottomLeft | MAPGRID_IMPASSABLE);
+    MapGridSetMetatileIdAt(8 + MAP_OFFSET, 20 + MAP_OFFSET, METATILE_Cave_SealedChamberEntrance_BottomMid);
+    MapGridSetMetatileIdAt(9 + MAP_OFFSET, 20 + MAP_OFFSET, METATILE_Cave_SealedChamberEntrance_BottomRight | MAPGRID_IMPASSABLE);
+    DrawWholeMapView();
+    PlaySE(SE_BANG);
+    FlagSet(FLAG_SYS_REGIDRAGO_PUZZLE_COMPLETED);
+    UnlockPlayerFieldControls();
+}
+
+// this used to be FldEff_UseFlyAncientTomb . why did GF merge the 2 functions?
+bool8 FldEff_UsePuzzleEffect(void)
+{
+    u8 taskId = CreateFieldMoveTask();
+
+    if (sIsRegidragoPuzzle == TRUE)
+    {
+        if (sIsRegisteelPuzzle == TRUE)
+        {
+            gTasks[taskId].data[8] = (u32)UseRegisteelHm_Callback >> 16;
+            gTasks[taskId].data[9] = (u32)UseRegisteelHm_Callback;
+        }
+        else
+        {
+            gTasks[taskId].data[8] = (u32)UseRegidragoHm_Callback >> 16;
+            gTasks[taskId].data[9] = (u32)UseRegidragoHm_Callback;
+        }
+    }
+    else
+    {
+        if (sIsRegisteelPuzzle == TRUE)
+        {
+            gTasks[taskId].data[8] = (u32)UseRegisteelHm_Callback >> 16;
+            gTasks[taskId].data[9] = (u32)UseRegisteelHm_Callback;
+        }
+        else
+        {
+            gTasks[taskId].data[8] = (u32)UseRegirockHm_Callback >> 16;
+            gTasks[taskId].data[9] = (u32)UseRegirockHm_Callback;
+        }
+    }
     return FALSE;
 }

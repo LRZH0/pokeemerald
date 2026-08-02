@@ -232,6 +232,7 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_EffectCalmMind               @ EFFECT_CALM_MIND
 	.4byte BattleScript_EffectDragonDance            @ EFFECT_DRAGON_DANCE
 	.4byte BattleScript_EffectCamouflage             @ EFFECT_CAMOUFLAGE
+	.4byte BattleScript_EffectWakeUpSlap			 @ EFFECT_WAKE_UP_SLAP
 
 BattleScript_EffectHit::
 	jumpifnotmove MOVE_SURF, BattleScript_HitFromAtkCanceler
@@ -2298,6 +2299,15 @@ BattleScript_EffectSmellingsalt::
 	jumpifstatus BS_TARGET, STATUS1_PARALYSIS, BattleScript_SmellingsaltDoubleDmg
 	goto BattleScript_EffectHit
 BattleScript_SmellingsaltDoubleDmg:
+	setbyte sDMG_MULTIPLIER, 2
+	goto BattleScript_EffectHit
+
+BattleScript_EffectWakeUpSlap::
+	jumpifstatus2 BS_TARGET, STATUS2_SUBSTITUTE, BattleScript_EffectHit
+	setmoveeffect MOVE_EFFECT_REMOVE_SLEEP | MOVE_EFFECT_CERTAIN
+	jumpifstatus BS_TARGET, STATUS1_SLEEP, BattleScript_WakeUpSlapDoubleDmg
+	goto BattleScript_EffectHit
+BattleScript_WakeUpSlapDoubleDmg:
 	setbyte sDMG_MULTIPLIER, 2
 	goto BattleScript_EffectHit
 

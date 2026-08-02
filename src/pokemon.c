@@ -526,6 +526,18 @@ static const u16 sSpeciesToHoennPokedexNum[NUM_SPECIES - 1] =
     SPECIES_TO_HOENN(GALLADE),
     SPECIES_TO_HOENN(PROBOPASS),
     SPECIES_TO_HOENN(MAGNEZONE),
+    SPECIES_TO_HOENN(SQUID),
+    SPECIES_TO_HOENN(BUDEW),
+    SPECIES_TO_HOENN(ROSERADE),
+    SPECIES_TO_HOENN(DUSKNOIR),
+    SPECIES_TO_HOENN(CHINGLING),
+    SPECIES_TO_HOENN(RHYPERIOR),
+    SPECIES_TO_HOENN(FROSLASS),
+    SPECIES_TO_HOENN(SKORUPI),
+    SPECIES_TO_HOENN(DRAPION),
+    SPECIES_TO_HOENN(REGIELEKI),
+    SPECIES_TO_HOENN(REGIDRAGO),
+    SPECIES_TO_HOENN(REGIGIGAS),
 };
 
 // Assigns all species to the National Dex Index (Summary No. for National Dex)
@@ -951,6 +963,17 @@ static const u16 sSpeciesToNationalPokedexNum[NUM_SPECIES - 1] =
     SPECIES_TO_NATIONAL(PROBOPASS),
     SPECIES_TO_NATIONAL(MAGNEZONE),
     SPECIES_TO_NATIONAL(SQUID),
+    SPECIES_TO_NATIONAL(BUDEW),
+    SPECIES_TO_NATIONAL(ROSERADE),
+    SPECIES_TO_NATIONAL(DUSKNOIR),
+    SPECIES_TO_NATIONAL(CHINGLING),
+    SPECIES_TO_NATIONAL(RHYPERIOR),
+    SPECIES_TO_NATIONAL(FROSLASS),
+    SPECIES_TO_NATIONAL(SKORUPI),
+    SPECIES_TO_NATIONAL(DRAPION),
+    SPECIES_TO_NATIONAL(REGIELEKI),
+    SPECIES_TO_NATIONAL(REGIDRAGO),
+    SPECIES_TO_NATIONAL(REGIGIGAS),
 };
 
 // Assigns all Hoenn Dex Indexes to a National Dex Index
@@ -1052,7 +1075,9 @@ static const u16 sHoennToNationalOrder[NUM_SPECIES - 1] =
     HOENN_TO_NATIONAL(BELLOSSOM),
     HOENN_TO_NATIONAL(DODUO),
     HOENN_TO_NATIONAL(DODRIO),
+    HOENN_TO_NATIONAL(BUDEW),
     HOENN_TO_NATIONAL(ROSELIA),
+    HOENN_TO_NATIONAL(ROSERADE),
     HOENN_TO_NATIONAL(GULPIN),
     HOENN_TO_NATIONAL(SWALOT),
     HOENN_TO_NATIONAL(CARVANHA),
@@ -1098,6 +1123,8 @@ static const u16 sHoennToNationalOrder[NUM_SPECIES - 1] =
     HOENN_TO_NATIONAL(IGGLYBUFF),
     HOENN_TO_NATIONAL(JIGGLYPUFF),
     HOENN_TO_NATIONAL(WIGGLYTUFF),
+    HOENN_TO_NATIONAL(SKORUPI),
+    HOENN_TO_NATIONAL(DRAPION),
     HOENN_TO_NATIONAL(CROAGUNK),
     HOENN_TO_NATIONAL(TOXICROAK),
     HOENN_TO_NATIONAL(FEEBAS),
@@ -1112,7 +1139,9 @@ static const u16 sHoennToNationalOrder[NUM_SPECIES - 1] =
     HOENN_TO_NATIONAL(BANETTE),
     HOENN_TO_NATIONAL(DUSKULL),
     HOENN_TO_NATIONAL(DUSCLOPS),
+    HOENN_TO_NATIONAL(DUSKNOIR),
     HOENN_TO_NATIONAL(TROPIUS),
+    HOENN_TO_NATIONAL(CHINGLING),
     HOENN_TO_NATIONAL(CHIMECHO),
     HOENN_TO_NATIONAL(ABSOL),
     HOENN_TO_NATIONAL(VULPIX),
@@ -1133,8 +1162,10 @@ static const u16 sHoennToNationalOrder[NUM_SPECIES - 1] =
     HOENN_TO_NATIONAL(HERACROSS),
     HOENN_TO_NATIONAL(RHYHORN),
     HOENN_TO_NATIONAL(RHYDON),
+    HOENN_TO_NATIONAL(RHYPERIOR),
     HOENN_TO_NATIONAL(SNORUNT),
     HOENN_TO_NATIONAL(GLALIE),
+    HOENN_TO_NATIONAL(FROSLASS),
     HOENN_TO_NATIONAL(SPHEAL),
     HOENN_TO_NATIONAL(SEALEO),
     HOENN_TO_NATIONAL(WALREIN),
@@ -1160,6 +1191,9 @@ static const u16 sHoennToNationalOrder[NUM_SPECIES - 1] =
     HOENN_TO_NATIONAL(REGIROCK),
     HOENN_TO_NATIONAL(REGICE),
     HOENN_TO_NATIONAL(REGISTEEL),
+    HOENN_TO_NATIONAL(REGIELEKI),
+    HOENN_TO_NATIONAL(REGIDRAGO),
+    HOENN_TO_NATIONAL(REGIGIGAS),
     HOENN_TO_NATIONAL(LATIAS),
     HOENN_TO_NATIONAL(LATIOS),
     HOENN_TO_NATIONAL(KYOGRE),
@@ -1825,6 +1859,17 @@ static const u8 sMonFrontAnimIdsTable[NUM_SPECIES - 1] =
     [SPECIES_PROBOPASS - 1]   = ANIM_V_SLIDE,
     [SPECIES_MAGNEZONE - 1]   = ANIM_H_SLIDE_WOBBLE,
     [SPECIES_SQUID - 1]       = ANIM_SWING_CONVEX_FAST_SHORT,
+    [SPECIES_BUDEW - 1]       = ANIM_V_SQUISH_AND_BOUNCE_SLOW,
+    [SPECIES_ROSERADE - 1]    = ANIM_H_VIBRATE,
+    [SPECIES_DUSKNOIR - 1]    = ANIM_H_SLIDE,
+    [SPECIES_CHINGLING - 1]   = ANIM_H_SLIDE_WOBBLE,
+    [SPECIES_RHYPERIOR - 1]   = ANIM_V_SHAKE_TWICE,
+    [SPECIES_FROSLASS - 1]    = ANIM_V_SLIDE_WOBBLE,
+    [SPECIES_SKORUPI - 1]     = ANIM_H_SLIDE_SLOW,
+    [SPECIES_DRAPION - 1]     = ANIM_V_JUMPS_BIG,
+    [SPECIES_REGIELEKI - 1]   = ANIM_GLOW_YELLOW,
+    [SPECIES_REGIDRAGO - 1]   = ANIM_TIP_HOP_FORWARD,
+    [SPECIES_REGIGIGAS - 1]   = ANIM_V_SHAKE,
 };
 
 static const u8 sMonAnimationDelayTable[NUM_SPECIES - 1] =
@@ -5553,6 +5598,7 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 mode, u16 evolutionItem)
     u8 beauty = GetMonData(mon, MON_DATA_BEAUTY, 0);
     u16 upperPersonality = personality >> 16;
     u8 holdEffect;
+    u8 gender = GetGenderFromSpeciesAndPersonality(species, personality);
 
     if (heldItem == ITEM_ENIGMA_BERRY)
         holdEffect = gSaveBlock1Ptr->enigmaBerry.holdEffect;
@@ -5650,6 +5696,20 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 mode, u16 evolutionItem)
         {
             if (gEvolutionTable[species][i].method == EVO_ITEM
              && gEvolutionTable[species][i].param == evolutionItem)
+            {
+                targetSpecies = gEvolutionTable[species][i].targetSpecies;
+                break;
+            }
+            else if (gEvolutionTable[species][i].method == EVO_ITEM_MALE
+             && gEvolutionTable[species][i].param == evolutionItem
+             && gender == MON_MALE)
+            {
+                targetSpecies = gEvolutionTable[species][i].targetSpecies;
+                break;
+            }
+            else if (gEvolutionTable[species][i].method == EVO_ITEM_FEMALE
+             && gEvolutionTable[species][i].param == evolutionItem
+             && gender == MON_FEMALE)
             {
                 targetSpecies = gEvolutionTable[species][i].targetSpecies;
                 break;

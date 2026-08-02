@@ -106,3 +106,20 @@ gText_BrandonWonGold::
 gText_BrandonDefeatGold::
 	.string "That's it! You've done it!\n"
 	.string "You kept working for this!$"
+
+@ Battle Arcade
+gText_DahliaWonSilver::
+	.string "Are we already finished here?\n"
+	.string "I was hoping for more...$"
+
+gText_DahliaDefeatSilver::
+	.string "You're so very, very good!\n"
+	.string "My Pokémon had a good time, too!$"
+
+gText_DahliaWonGold::
+	.string "What a close battle!\n"
+	.string "If only luck was on your side.$"
+
+gText_DahliaDefeatGold::
+	.string "Battling a wonderful Trainer is\n"
+	.string "always a happy occasion!$"

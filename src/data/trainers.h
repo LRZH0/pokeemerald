@@ -10332,6 +10332,18 @@ const struct Trainer gTrainers[] = {
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_SETUP_FIRST_TURN,
         .party = ITEM_CUSTOM_MOVES(sParty_Test),
     },
+
+    [TRAINER_DAHLIA] =
+    {
+        .trainerClass = TRAINER_CLASS_PYRAMID_KING,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .trainerPic = TRAINER_PIC_AQUA_LEADER_ARCHIE,
+        .trainerName = _("DAHLIA"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY,
+        .party = NO_ITEM_DEFAULT_MOVES(sParty_Dahlia),
+    },
 };
 
 const struct Trainer gTrainersEasy[] = {
@@ -20668,6 +20680,18 @@ const struct Trainer gTrainersEasy[] = {
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_SETUP_FIRST_TURN,
         .party = ITEM_CUSTOM_MOVES(sPartyEasy_Test),
     },
+
+    [TRAINER_DAHLIA] =
+    {
+        .trainerClass = TRAINER_CLASS_PYRAMID_KING,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .trainerPic = TRAINER_PIC_AQUA_LEADER_ARCHIE,
+        .trainerName = _("DAHLIA"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY,
+        .party = NO_ITEM_DEFAULT_MOVES(sPartyEasy_Dahlia),
+    },
 };
 
 const struct Trainer gTrainersHard[] = {
@@ -31003,5 +31027,17 @@ const struct Trainer gTrainersHard[] = {
         .doubleBattle = FALSE,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_SETUP_FIRST_TURN,
         .party = ITEM_CUSTOM_MOVES(sPartyHard_Test),
+    },
+
+    [TRAINER_DAHLIA] =
+    {
+        .trainerClass = TRAINER_CLASS_PYRAMID_KING,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .trainerPic = TRAINER_PIC_AQUA_LEADER_ARCHIE,
+        .trainerName = _("DAHLIA"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY,
+        .party = NO_ITEM_DEFAULT_MOVES(sPartyHard_Dahlia),
     },
 };

@@ -1975,6 +1975,50 @@ Cry_Squid::
 	.incbin "sound/direct_sound_samples/cries/mantine.bin"
 
 	.align 2
+Cry_Budew::
+	.incbin "sound/direct_sound_samples/cries/budew.bin"
+
+	.align 2
+Cry_Roserade::
+	.incbin "sound/direct_sound_samples/cries/roserade.bin"
+
+	.align 2
+Cry_Dusknoir::
+	.incbin "sound/direct_sound_samples/cries/dusknoir.bin"
+
+	.align 2
+Cry_Chingling::
+	.incbin "sound/direct_sound_samples/cries/chingling.bin"
+
+	.align 2
+Cry_Rhyperior::
+	.incbin "sound/direct_sound_samples/cries/rhyperior.bin"
+
+	.align 2
+Cry_Froslass::
+	.incbin "sound/direct_sound_samples/cries/froslass.bin"
+
+	.align 2
+Cry_Skorupi::
+	.incbin "sound/direct_sound_samples/cries/skorupi.bin"
+
+	.align 2
+Cry_Drapion::
+	.incbin "sound/direct_sound_samples/cries/drapion.bin"
+
+	.align 2
+Cry_Regieleki::
+	.incbin "sound/direct_sound_samples/cries/regieleki.bin"
+
+	.align 2
+Cry_Regidrago::
+	.incbin "sound/direct_sound_samples/cries/regidrago.bin"
+
+	.align 2
+Cry_Regigigas::
+	.incbin "sound/direct_sound_samples/cries/regigigas.bin"
+
+	.align 2
 DirectSoundWaveData_register_noise::
 	.incbin "sound/direct_sound_samples/register_noise.bin"
 

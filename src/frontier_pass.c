@@ -77,6 +77,7 @@ enum
     CURSOR_AREA_SYMBOL_FACTORY,
     CURSOR_AREA_SYMBOL_PIKE,
     CURSOR_AREA_SYMBOL_PYRAMID,
+    CURSOR_AREA_SYMBOL_ARCADE,
     CURSOR_AREA_COUNT
 };
 
@@ -353,18 +354,19 @@ static const sPassAreasLayout[CURSOR_AREA_COUNT - 1] =
     [CURSOR_AREA_EARNED_SYMBOLS - 1] = { 24,  48,  20, 108},
     [CURSOR_AREA_SYMBOL_TOWER - 1]   = { 50,  66,  20,  36},
     [CURSOR_AREA_SYMBOL_DOME - 1]    = { 66,  82,  32,  48},
-    [CURSOR_AREA_SYMBOL_PALACE - 1]  = { 50,  66,  44,  60},
-    [CURSOR_AREA_SYMBOL_ARENA - 1]   = { 66,  82,  56,  72},
-    [CURSOR_AREA_SYMBOL_FACTORY - 1] = { 50,  66,  68,  84},
-    [CURSOR_AREA_SYMBOL_PIKE - 1]    = { 66,  82,  80,  96},
-    [CURSOR_AREA_SYMBOL_PYRAMID - 1] = { 50,  66,  92, 108},
+    [CURSOR_AREA_SYMBOL_PALACE - 1]  = { 50,  66,  40,  56},
+    [CURSOR_AREA_SYMBOL_ARENA - 1]   = { 66,  82,  52,  68},
+    [CURSOR_AREA_SYMBOL_FACTORY - 1] = { 50,  66,  60,  76},
+    [CURSOR_AREA_SYMBOL_PIKE - 1]    = { 66,  82,  72,  88},
+    [CURSOR_AREA_SYMBOL_PYRAMID - 1] = { 50,  66,  80,  96},
+    [CURSOR_AREA_SYMBOL_ARCADE - 1]  = { 66,  82,  92, 108},
 };
 
 static const struct CompressedSpriteSheet sCursorSpriteSheets[] =
 {
     {sCursor_Gfx, 0x100, TAG_CURSOR},
     {sMapCursor_Gfx, 0x400, TAG_MAP_INDICATOR},
-    {gFrontierPassMedals_Gfx, 0x380, TAG_MEDAL_SILVER},
+    {gFrontierPassMedals_Gfx, 0x400, TAG_MEDAL_SILVER},
 };
 
 static const struct CompressedSpriteSheet sHeadsSpriteSheet[] =
@@ -432,6 +434,12 @@ static const union AnimCmd sAnim_Frame7[] =
     ANIMCMD_END
 };
 
+static const union AnimCmd sAnim_Frame8[] =
+{
+    ANIMCMD_FRAME(28, 0),
+    ANIMCMD_END
+};
+
 static const union AnimCmd sAnim_MapIndicatorCursor_Rectangle[] =
 {
     ANIMCMD_FRAME(0, 45),
@@ -461,7 +469,8 @@ static const union AnimCmd *const sAnims_Medal[] =
     [CURSOR_AREA_SYMBOL_ARENA   - CURSOR_AREA_SYMBOL] = sAnim_Frame4,
     [CURSOR_AREA_SYMBOL_FACTORY - CURSOR_AREA_SYMBOL] = sAnim_Frame5,
     [CURSOR_AREA_SYMBOL_PIKE    - CURSOR_AREA_SYMBOL] = sAnim_Frame6,
-    [CURSOR_AREA_SYMBOL_PYRAMID - CURSOR_AREA_SYMBOL] = sAnim_Frame7
+    [CURSOR_AREA_SYMBOL_PYRAMID - CURSOR_AREA_SYMBOL] = sAnim_Frame7,
+    [CURSOR_AREA_SYMBOL_ARCADE  - CURSOR_AREA_SYMBOL] = sAnim_Frame8
 };
 
 static const union AnimCmd *const sAnims_MapIndicatorCursor[] =
@@ -543,6 +552,7 @@ static const u8 *const sPassAreaDescriptions[CURSOR_AREA_COUNT + 1] =
     [CURSOR_AREA_SYMBOL_FACTORY] = gText_BattleFactoryKnowledgeSymbol,
     [CURSOR_AREA_SYMBOL_PIKE]    = gText_BattlePikeLuckSymbol,
     [CURSOR_AREA_SYMBOL_PYRAMID] = gText_BattlePyramidBraveSymbol,
+    [CURSOR_AREA_SYMBOL_ARCADE]  = gText_BattleArcadeAssessmentSymbol,
     [CURSOR_AREA_COUNT]          = gText_EmptyString7,
 };
 
@@ -555,13 +565,14 @@ struct
     u8 animNum;
 } static const sMapLandmarks[NUM_FRONTIER_FACILITIES] =
 {
-    [FRONTIER_FACILITY_TOWER]   = {gText_BattleTower3,   gText_BattleTowerDesc,    89,  40, MAP_INDICATOR_SQUARE},
-    [FRONTIER_FACILITY_DOME]    = {gText_BattleDome2,    gText_BattleDomeDesc,     33,  42, MAP_INDICATOR_SQUARE},
-    [FRONTIER_FACILITY_PALACE]  = {gText_BattlePalace2,  gText_BattlePalaceDesc,  120,  86, MAP_INDICATOR_RECTANGLE},
-    [FRONTIER_FACILITY_ARENA]   = {gText_BattleArena2,   gText_BattleArenaDesc,   114,  59, MAP_INDICATOR_RECTANGLE},
-    [FRONTIER_FACILITY_FACTORY] = {gText_BattleFactory2, gText_BattleFactoryDesc,  25,  67, MAP_INDICATOR_RECTANGLE},
-    [FRONTIER_FACILITY_PIKE]    = {gText_BattlePike2,    gText_BattlePikeDesc,     57,  57, MAP_INDICATOR_SQUARE},
-    [FRONTIER_FACILITY_PYRAMID] = {gText_BattlePyramid2, gText_BattlePyramidDesc, 134,  41, MAP_INDICATOR_SQUARE},
+    [FRONTIER_FACILITY_TOWER]   = {gText_BattleTower3,   gText_BattleTowerDesc,    97,  40, MAP_INDICATOR_SQUARE},
+    [FRONTIER_FACILITY_DOME]    = {gText_BattleDome2,    gText_BattleDomeDesc,     41,  42, MAP_INDICATOR_SQUARE},
+    [FRONTIER_FACILITY_PALACE]  = {gText_BattlePalace2,  gText_BattlePalaceDesc,  128,  86, MAP_INDICATOR_RECTANGLE},
+    [FRONTIER_FACILITY_ARENA]   = {gText_BattleArena2,   gText_BattleArenaDesc,   121,  59, MAP_INDICATOR_RECTANGLE},
+    [FRONTIER_FACILITY_FACTORY] = {gText_BattleFactory2, gText_BattleFactoryDesc,  33,  67, MAP_INDICATOR_RECTANGLE},
+    [FRONTIER_FACILITY_PIKE]    = {gText_BattlePike2,    gText_BattlePikeDesc,     65,  57, MAP_INDICATOR_SQUARE},
+    [FRONTIER_FACILITY_PYRAMID] = {gText_BattlePyramid2, gText_BattlePyramidDesc, 142,  41, MAP_INDICATOR_SQUARE},
+    [FRONTIER_FACILITY_ARCADE]  = {gText_BattleArcade2,  gText_BattleArcadeDesc,   17,  42, MAP_INDICATOR_SQUARE},
 };
 
 static void ResetGpuRegsAndBgs(void)
@@ -1626,6 +1637,12 @@ static u8 MapNumToFrontierFacilityId(u16 mapNum) // id + 1, zero means not a fro
         || mapNum == MAP_NUM(MAP_BATTLE_FRONTIER_BATTLE_PYRAMID_TOP))
         return FRONTIER_FACILITY_PYRAMID + 1;
 
+    // TO-DO: In Battle Arcade
+    else if (mapNum == MAP_NUM(MAP_BATTLE_ARCADE_LOBBY)
+        || mapNum == MAP_NUM(MAP_BATTLE_ARCADE_HALLWAY)
+        || mapNum == MAP_NUM(MAP_BATTLE_ARCADE_BATTLE_ROOM))
+        return FRONTIER_FACILITY_ARCADE + 1;
+
     else
         return 0;
 }
@@ -1747,7 +1764,7 @@ static void HandleFrontierMapCursorMove(u8 direction)
     if (direction)
     {
         oldCursorPos = sMapData->cursorPos;
-        sMapData->cursorPos = (oldCursorPos + 6) % NUM_FRONTIER_FACILITIES;
+        sMapData->cursorPos = (oldCursorPos + 7) % NUM_FRONTIER_FACILITIES;
     }
     else
     {

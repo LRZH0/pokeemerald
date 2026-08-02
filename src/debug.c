@@ -188,6 +188,7 @@ enum {
 enum { // Give Fill
     DEBUG_FILL_MENU_ITEM_PC_BOXES_FAST,
     DEBUG_FILL_MENU_ITEM_PC_BOXES_SLOW,
+    DEBUG_FILL_MENU_ITEM_PC_BOXES_HOENN,
     DEBUG_FILL_MENU_ITEM_PC_ITEMS,
     DEBUG_FILL_MENU_ITEM_POCKET_ITEMS,
     DEBUG_FILL_MENU_ITEM_POCKET_BALLS,
@@ -387,6 +388,7 @@ static void DebugAction_PkmCreator_Testing_Copy(u8 taskid);
 
 static void DebugAction_Fill_PCBoxes_Fast(u8 taskId);
 static void DebugAction_Fill_PCBoxes_Slow(u8 taskId);
+static void DebugAction_Fill_PCBoxes_Hoenn(u8 taskId);
 static void DebugAction_Fill_PCItemStorage(u8 taskId);
 static void DebugAction_Fill_PocketItems(u8 taskId);
 static void DebugAction_Fill_PocketPokeBalls(u8 taskId);
@@ -582,6 +584,7 @@ static const u8 sDebugText_PkmCreator_Testing_Copy[] =              _("Testing (
 // Fill Menu
 static const u8 sDebugText_Fill_Pc_Fast[] =        _("Fill PCBoxes Fast");
 static const u8 sDebugText_Fill_Pc_Slow[] =        _("Fill PCBoxes Slow (LAG!)");
+static const u8 sDebugText_Fill_Pc_Hoenn[] =       _("Fill PCBoxes HoennDex");
 static const u8 sDebugText_Fill_Pc_Items[] =       _("Fill PCItems");
 static const u8 sDebugText_Fill_PocketItems[] =    _("Fill Pocket Items");
 static const u8 sDebugText_Fill_PocketPokeBalls[] =_("Fill Pocket PokeBalls");
@@ -763,6 +766,7 @@ static const struct ListMenuItem sDebugMenu_Items_Fill[] =
 {
     [DEBUG_FILL_MENU_ITEM_PC_BOXES_FAST]    = {sDebugText_Fill_Pc_Fast,         DEBUG_FILL_MENU_ITEM_PC_BOXES_FAST},
     [DEBUG_FILL_MENU_ITEM_PC_BOXES_SLOW]    = {sDebugText_Fill_Pc_Slow,         DEBUG_FILL_MENU_ITEM_PC_BOXES_SLOW},
+    [DEBUG_FILL_MENU_ITEM_PC_BOXES_HOENN]   = {sDebugText_Fill_Pc_Hoenn,        DEBUG_FILL_MENU_ITEM_PC_BOXES_HOENN},
     [DEBUG_FILL_MENU_ITEM_PC_ITEMS]         = {sDebugText_Fill_Pc_Items ,       DEBUG_FILL_MENU_ITEM_PC_ITEMS},
     [DEBUG_FILL_MENU_ITEM_POCKET_ITEMS]     = {sDebugText_Fill_PocketItems,     DEBUG_FILL_MENU_ITEM_POCKET_ITEMS},
     [DEBUG_FILL_MENU_ITEM_POCKET_BALLS]     = {sDebugText_Fill_PocketPokeBalls, DEBUG_FILL_MENU_ITEM_POCKET_BALLS},
@@ -866,6 +870,7 @@ static void (*const sDebugMenu_Actions_Fill[])(u8) =
 {
     [DEBUG_FILL_MENU_ITEM_PC_BOXES_FAST]    = DebugAction_Fill_PCBoxes_Fast,
     [DEBUG_FILL_MENU_ITEM_PC_BOXES_SLOW]    = DebugAction_Fill_PCBoxes_Slow,
+    [DEBUG_FILL_MENU_ITEM_PC_BOXES_HOENN]   = DebugAction_Fill_PCBoxes_Hoenn,
     [DEBUG_FILL_MENU_ITEM_PC_ITEMS]         = DebugAction_Fill_PCItemStorage,
     [DEBUG_FILL_MENU_ITEM_POCKET_ITEMS]     = DebugAction_Fill_PocketItems,
     [DEBUG_FILL_MENU_ITEM_POCKET_BALLS]     = DebugAction_Fill_PocketPokeBalls,
@@ -3724,7 +3729,6 @@ static void DebugAction_Fill_PCBoxes_Slow(u8 taskId)
                     OT_ID_PLAYER_ID,
                     0);
 
-            #ifndef POKEMON_EXPANSION
                 if (i < SPECIES_CELEBI)
                     i += 1;
                 else if (i == SPECIES_CELEBI)
@@ -3733,12 +3737,43 @@ static void DebugAction_Fill_PCBoxes_Slow(u8 taskId)
                     i += 1;
                 else
                     i = 1;
-            #else
-                if (i < FORMS_START - 1)
-                    i += 1;
+
+                gPokemonStoragePtr->boxes[boxId][boxPosition] = boxMon;
+            }
+        }
+    }
+
+    Debug_DestroyMenu_Full(taskId);
+    ScriptContext_Enable();
+}
+static void DebugAction_Fill_PCBoxes_Hoenn(u8 taskId)
+{
+    int boxId, boxPosition;
+    u32 personality;
+    struct BoxPokemon boxMon;
+    u32 i = 1;
+
+    personality = Random32();
+
+    for (boxId = 0; boxId < TOTAL_BOXES_COUNT; boxId++)
+    {
+        for (boxPosition = 0; boxPosition < IN_BOX_COUNT; boxPosition++)
+        {
+            if (!GetBoxMonData(&gPokemonStoragePtr->boxes[boxId][boxPosition], MON_DATA_SANITY_HAS_SPECIES))
+            {
+                CreateBoxMon(&boxMon,
+                    HoennPokedexNumToSpecies(i),
+                    100,
+                    32,
+                    personality,
+                    0,
+                    OT_ID_PLAYER_ID,
+                    0);
+                
+                    if (i > HOENN_DEX_DEOXYS)
+                    break;
                 else
-                    i = 1;
-            #endif
+                    i += 1;
 
                 gPokemonStoragePtr->boxes[boxId][boxPosition] = boxMon;
             }

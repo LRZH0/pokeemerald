@@ -394,6 +394,21 @@ static const u8 sLeafStoneDesc[] = _(
     "species of POKéMON\n"
     "evolve.");
 
+static const u8 sDawnStoneDesc[] = _(
+    "Makes certain\n"
+    "species of POKéMON\n"
+    "evolve.");
+
+static const u8 sDuskStoneDesc[] = _(
+    "Makes certain\n"
+    "species of POKéMON\n"
+    "evolve.");
+
+static const u8 sShinyStoneDesc[] = _(
+    "Makes certain\n"
+    "species of POKéMON\n"
+    "evolve.");
+
 // Valuable items
 static const u8 sTinyMushroomDesc[] = _(
     "A plain mushroom\n"
@@ -927,6 +942,16 @@ static const u8 sLaxIncenseDesc[] = _(
     "slightly lowers the\n"
     "foe's accuracy.");
 
+static const u8 sPureIncenseDesc[] = _(
+    "A hold item that\n"
+    "helps repel wild\n"
+    "POKéMON.");
+
+static const u8 sRoseIncenseDesc[] = _(
+    "A hold item that\n"
+    "slightly boosts\n"
+    "GRASS-type moves.");
+
 static const u8 sLuckyPunchDesc[] = _(
     "A hold item that\n"
     "raises CHANSEY's\n"
@@ -1374,8 +1399,23 @@ static const u8 sTM51Desc[] = _(
 
 static const u8 sTM52Desc[] = _(
     "The user cries out,\n"
-    "lowering foes' SP.\n"
-    "ATK.");
+    "lowering foes'\n"
+    "SP. ATK.");
+
+static const u8 sTM53Desc[] = _(
+    "A slamming attack\n"
+    "that hits twice in\n"
+    "a row.");
+
+static const u8 sTM54Desc[] = _(
+    "Flash frozen ice is\n"
+    "thrown quickly to\n"
+    "strike first.");
+
+static const u8 sTM55Desc[] = _(
+    "A repulsive wind\n"
+    "that may raise\n"
+    "all stats.");
 
 
 static const u8 sHM01Desc[] = _(

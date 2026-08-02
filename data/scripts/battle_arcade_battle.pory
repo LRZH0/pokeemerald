@@ -313,7 +313,7 @@ call(BattleArcade_Challenge_EventScript_GiveBP)
 
 script BattleArcade_Challenge_EventScript_GiveBP
 {
-	arcade_givepoints
+	frontier_givepoints
 	msgbox(format("You have cleared your seventh battle! Congratulations! You have earned BP as your prize!"))
 	msgbox(BattleFrontier_Text_ObtainedXBattlePoints, MSGBOX_GETPOINTS)
 }

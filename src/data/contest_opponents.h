@@ -98,7 +98,9 @@ enum {
     CONTEST_OPPONENT_CLARA,
     CONTEST_OPPONENT_JAKOB,
     CONTEST_OPPONENT_TREY,
-    CONTEST_OPPONENT_LANE
+    CONTEST_OPPONENT_LANE,
+    CONTEST_OPPONENT_WALLACE,
+    CONTEST_OPPONENT_JUAN,
 };
 
 // All contest opponents have a common set of AI flags (which contains all of the actually
@@ -2489,7 +2491,7 @@ const struct ContestPokemon gContestOpponents[] =
     },
     [CONTEST_OPPONENT_DEON] = {
         .species = SPECIES_SHARPEDO,
-        .nickname = _("PEDOS"),
+        .nickname = _("EDO"),
         .trainerName = _("DEON"),
         .trainerGfxId = OBJ_EVENT_GFX_SCHOOL_KID_M,
         .aiFlags = CONTEST_AI_SET_A,
@@ -2906,6 +2908,62 @@ const struct ContestPokemon gContestOpponents[] =
         .sheen = 255,
         .personality = 0,
         .otId = CONTEST_AI_TRAINER_ID,
+    },
+    [CONTEST_OPPONENT_WALLACE] = {
+        .species = SPECIES_MILOTIC,
+        .nickname = _("LILOTIC"),
+        .trainerName = _("WALLACE"),
+        .trainerGfxId = OBJ_EVENT_GFX_WALLACE,
+        .aiFlags = CONTEST_AI_SET_10,
+        .whichRank = CONTEST_RANK_MASTER,
+        .aiPool_Cool = FALSE,
+        .aiPool_Beauty = TRUE,
+        .aiPool_Cute = TRUE,
+        .aiPool_Smart = FALSE,
+        .aiPool_Tough = FALSE,
+        .moves =
+        {
+            MOVE_SURF,
+            MOVE_DIVE,
+            MOVE_ATTRACT,
+            MOVE_WATER_SPORT
+        },
+        .cool = 100,
+        .beauty = 240,
+        .cute = 200,
+        .smart = 140,
+        .tough = 140,
+        .sheen = 255,
+        .personality = 0,
+        .otId = CONTEST_AI_TRAINER_ID,
+    },
+    [CONTEST_OPPONENT_JUAN] = {
+        .species = SPECIES_KINGDRA,
+        .nickname = _("GINRA"),
+        .trainerName = _("JUAN"),
+        .trainerGfxId = OBJ_EVENT_GFX_JUAN,
+        .aiFlags = CONTEST_AI_SET_11,
+        .whichRank = CONTEST_RANK_MASTER,
+        .aiPool_Cool = TRUE,
+        .aiPool_Beauty = TRUE,
+        .aiPool_Cute = FALSE,
+        .aiPool_Smart = FALSE,
+        .aiPool_Tough = FALSE,
+        .moves =
+        {
+            MOVE_DRAGON_BREATH,
+            MOVE_DRAGON_DANCE,
+            MOVE_HAIL,
+            MOVE_BLIZZARD
+        },
+        .cool = 200,
+        .beauty = 220,
+        .cute = 80,
+        .smart = 100,
+        .tough = 130,
+        .sheen = 255,
+        .personality = 0,
+        .otId = CONTEST_AI_TRAINER_ID,
     }
 };
 
@@ -3007,5 +3065,7 @@ const u8 gPostgameContestOpponentFilter[] =
     [CONTEST_OPPONENT_CLARA] = CONTEST_FILTER_ONLY_POSTGAME,
     [CONTEST_OPPONENT_JAKOB] = CONTEST_FILTER_ONLY_POSTGAME,
     [CONTEST_OPPONENT_TREY] = CONTEST_FILTER_ONLY_POSTGAME,
-    [CONTEST_OPPONENT_LANE] = CONTEST_FILTER_ONLY_POSTGAME
+    [CONTEST_OPPONENT_LANE] = CONTEST_FILTER_ONLY_POSTGAME,
+    [CONTEST_OPPONENT_WALLACE] = CONTEST_FILTER_ONLY_POSTGAME,
+    [CONTEST_OPPONENT_JUAN] = CONTEST_FILTER_ONLY_POSTGAME
 };

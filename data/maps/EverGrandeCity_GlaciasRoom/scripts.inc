@@ -39,11 +39,22 @@ EverGrandeCity_GlaciasRoom_EventScript_CloseDoor::
 EverGrandeCity_GlaciasRoom_EventScript_Glacia::
 	lock
 	faceplayer
+	goto_if_set FLAG_IS_CHAMPION, EverGrandeCity_GlaciasRoom_EventScript_GlaciaRematch
 	goto_if_set FLAG_DEFEATED_ELITE_4_GLACIA, EverGrandeCity_GlaciasRoom_EventScript_PostBattleSpeech
 	playbgm MUS_ENCOUNTER_ELITE_FOUR, FALSE
 	msgbox EverGrandeCity_GlaciasRoom_Text_IntroSpeech, MSGBOX_DEFAULT
 	trainerbattle_no_intro TRAINER_GLACIA, EverGrandeCity_GlaciasRoom_Text_Defeat
 	goto EverGrandeCity_GlaciasRoom_EventScript_Defeated
+	end
+
+EverGrandeCity_GlaciasRoom_EventScript_GlaciaRematch::
+	lock
+	faceplayer
+	goto_if_set FLAG_DEFEATED_ELITE_4_GLACIA, EverGrandeCity_GlaciasRoom_EventScript_PostBattleSpeechRematch
+	playbgm MUS_ENCOUNTER_ELITE_FOUR, FALSE
+	msgbox EverGrandeCity_GlaciasRoom_Text_IntroSpeechRematch, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_GLACIA_2, EverGrandeCity_GlaciasRoom_Text_DefeatRematch
+	goto EverGrandeCity_GlaciasRoom_EventScript_DefeatedRematch
 	end
 
 EverGrandeCity_GlaciasRoom_EventScript_PostBattleSpeech::
@@ -55,6 +66,18 @@ EverGrandeCity_GlaciasRoom_EventScript_Defeated::
 	setflag FLAG_DEFEATED_ELITE_4_GLACIA
 	call PokemonLeague_EliteFour_SetAdvanceToNextRoomMetatiles
 	msgbox EverGrandeCity_GlaciasRoom_Text_PostBattleSpeech, MSGBOX_DEFAULT
+	release
+	end
+
+EverGrandeCity_GlaciasRoom_EventScript_PostBattleSpeechRematch::
+	msgbox EverGrandeCity_GlaciasRoom_Text_PostBattleSpeechRematch, MSGBOX_DEFAULT
+	release
+	end
+
+EverGrandeCity_GlaciasRoom_EventScript_DefeatedRematch::
+	setflag FLAG_DEFEATED_ELITE_4_GLACIA
+	call PokemonLeague_EliteFour_SetAdvanceToNextRoomMetatiles
+	msgbox EverGrandeCity_GlaciasRoom_Text_PostBattleSpeechRematch, MSGBOX_DEFAULT
 	release
 	end
 
@@ -80,4 +103,22 @@ EverGrandeCity_GlaciasRoom_Text_PostBattleSpeech:
 	.string "Advance to the next room.\p"
 	.string "And there, confirm the truly fearsome\n"
 	.string "side of the POKéMON LEAGUE.$"
+
+EverGrandeCity_GlaciasRoom_Text_IntroSpeechRematch:
+	.string "I've been waiting for a TRAINER\n"
+	.string "with a burning-hot soul.\p"
+	.string "How can you oppose a team\n"
+	.string "that can freeze everything?$"
+
+EverGrandeCity_GlaciasRoom_Text_DefeatRematch:
+	.string "It really is hot.\p"
+	.string "Once again my POKéMON… melt\n"
+	.string "in your presence.$"
+
+EverGrandeCity_GlaciasRoom_Text_PostBattleSpeechRematch:
+	.string "Hmmph…\p"
+	.string "Do you intend to thaw my very heart?\n"
+	.string "That actually wouldn't bother me.\p"
+	.string "Anyway, continue onward!\n"
+	.string "DRAKE is waiting for you as well.$"
 

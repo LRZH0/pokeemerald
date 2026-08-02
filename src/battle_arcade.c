@@ -896,7 +896,7 @@ void ShowArcadeRecordsFromOverworld(void)
 
 void DoArcadeTrainerBattle(void)
 {
-    gBattleScripting.specialTrainerBattleType = SPECIAL_BATTLE_TOWER;
+    gBattleScripting.specialTrainerBattleType = SPECIAL_BATTLE_ARCADE;
     SetArcadeBattleFlags();
     CreateTask(Task_StartBattleAfterTransition, 1);
     PlayMapChosenOrBattleBGM(0);

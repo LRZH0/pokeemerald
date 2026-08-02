@@ -110,9 +110,9 @@
 #define ITEM_THUNDER_STONE 96
 #define ITEM_WATER_STONE 97
 #define ITEM_LEAF_STONE 98
-#define ITEM_063 99
-#define ITEM_064 100
-#define ITEM_065 101
+#define ITEM_DAWN_STONE 99
+#define ITEM_DUSK_STONE 100
+#define ITEM_SHINY_STONE 101
 #define ITEM_066 102
 
 // Unusable
@@ -257,8 +257,8 @@
 #define ITEM_SMOOTH_ROCK 227
 #define ITEM_HEAT_ROCK 228
 #define ITEM_DAMP_ROCK 229
-#define ITEM_0E6 230
-#define ITEM_0E7 231
+#define ITEM_PURE_INCENSE 230
+#define ITEM_ROSE_INCENSE 231
 #define ITEM_0E8 232
 #define ITEM_0E9 233
 #define ITEM_0EA 234
@@ -374,14 +374,17 @@
 #define ITEM_TM50 338
 #define ITEM_TM51 339
 #define ITEM_TM52 340
-#define ITEM_HM01 341
-#define ITEM_HM02 342
-#define ITEM_HM03 343
-#define ITEM_HM04 344
-#define ITEM_HM05 345
-#define ITEM_HM06 346
-#define ITEM_HM07 347
-#define ITEM_HM08 348
+#define ITEM_TM53 341
+#define ITEM_TM54 342
+#define ITEM_TM55 343
+#define ITEM_HM01 344
+#define ITEM_HM02 345
+#define ITEM_HM03 346
+#define ITEM_HM04 347
+#define ITEM_HM05 348
+#define ITEM_HM06 349
+#define ITEM_HM07 350
+#define ITEM_HM08 351
 
 #define NUM_TMS_HMS ITEM_HM08
 

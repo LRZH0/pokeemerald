@@ -516,8 +516,8 @@
 #define FLAG_DEFEATED_HO_OH                  0x1DC
 #define FLAG_DEFEATED_LUGIA                  0x1DD
 
-#define FLAG_UNUSED_0x1DE                    0x1DE // Unused Flag
-#define FLAG_UNUSED_0x1DF                    0x1DF // Unused Flag
+#define FLAG_DEFEATED_REGIELEKI              0x1DE // Unused Flag
+#define FLAG_DEFEATED_REGIDRAGO              0x1DF // Unused Flag
 #define FLAG_UNUSED_0x1E0                    0x1E0 // Unused Flag
 #define FLAG_UNUSED_0x1E1                    0x1E1 // Unused Flag
 #define FLAG_UNUSED_0x1E2                    0x1E2 // Unused Flag
@@ -742,8 +742,8 @@
 #define FLAG_UNUSED_0x2B7  0x2B7 // Unused Flag
 #define FLAG_UNUSED_0x2B8  0x2B8 // Unused Flag
 #define FLAG_UNUSED_0x2B9  0x2B9 // Unused Flag
-#define FLAG_UNUSED_0x2BA  0x2BA // Unused Flag
-#define FLAG_UNUSED_0x2BB  0x2BB // Unused Flag
+#define FLAG_HIDE_REGIELEKI                                         0x2BA
+#define FLAG_HIDE_REGIDRAGO                                         0x2BB
 
 // Event Flags
 #define FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG                      0x2BC
@@ -1221,9 +1221,9 @@
 #define FLAG_ITEM_MAGMA_HIDEOUT_4F_MAX_REVIVE                       0x490
 #define FLAG_ITEM_SAFARI_ZONE_NORTH_EAST_NUGGET                     0x491
 #define FLAG_ITEM_SAFARI_ZONE_SOUTH_EAST_BIG_PEARL                  0x492
+#define FLAG_ITEM_MT_PYRE_3F_PURE_INCENSE                           0x493
+#define FLAG_ITEM_MT_PYRE_3F_ROSE_INCENSE                           0x494
 
-#define FLAG_UNUSED_0x493                                           0x493 // Unused Flag
-#define FLAG_UNUSED_0x494                                           0x494 // Unused Flag
 #define FLAG_UNUSED_0x495                                           0x495 // Unused Flag
 #define FLAG_UNUSED_0x496                                           0x496 // Unused Flag
 #define FLAG_UNUSED_0x497                                           0x497 // Unused Flag
@@ -1507,8 +1507,9 @@
 
 #define FLAG_RECEIVED_POKEDEX_FROM_BIRCH            (SYSTEM_FLAGS + 0x85)
 
-#define FLAG_UNUSED_0x8E6                           (SYSTEM_FLAGS + 0x86) // Unused Flag
-#define FLAG_UNUSED_0x8E7                           (SYSTEM_FLAGS + 0x87) // Unused Flag
+#define FLAG_SYS_REGIELEKI_PUZZLE_COMPLETED         (SYSTEM_FLAGS + 0x86)
+#define FLAG_SYS_REGIDRAGO_PUZZLE_COMPLETED         (SYSTEM_FLAGS + 0x87)
+
 #define FLAG_UNUSED_0x8E8                           (SYSTEM_FLAGS + 0x88) // Unused Flag
 #define FLAG_UNUSED_0x8E9                           (SYSTEM_FLAGS + 0x89) // Unused Flag
 #define FLAG_UNUSED_0x8EA                           (SYSTEM_FLAGS + 0x8A) // Unused Flag

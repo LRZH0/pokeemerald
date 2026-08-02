@@ -2321,55 +2321,121 @@ const u8 gDeoxysPokedexText[] = _(
     "agility and speed.");
 
 const u8 gDhelmisePokedexText[] = _(
-    "A POKéMON that mutated from an\n"
-    "extraterrestrial virus exposed to a laser\n"
-    "beam. Its body is configured for superior\n"
-    "agility and speed.");
+    "The soul of seaweed adrift in the waves\n"
+    "became reborn as this POKéMON.\n"
+    "It maintains itself with new infusions of\n"
+    "seabed detritus and seaweed.");
 
 const u8 gCroagunkPokedexText[] = _(
-    "A POKéMON that mutated from an\n"
-    "extraterrestrial virus exposed to a laser\n"
-    "beam. Its body is configured for superior\n"
-    "agility and speed.");
+    "CROAGUNK rarely fights fairly. Inflating\n"
+    "its poison sacs, it fills the area with\n"
+    "an odd sound and hits flinching\n"
+    "opponents with a poison jab.");
 
 const u8 gToxicroakPokedexText[] = _(
-    "A POKéMON that mutated from an\n"
-    "extraterrestrial virus exposed to a laser\n"
-    "beam. Its body is configured for superior\n"
-    "agility and speed.");
+    "Swaying and dodging the attacks\n"
+    "of its foes, it weaves its flexible body\n"
+    "in close, then lunges out with its\n"
+    "poisonous claws.");
 
 const u8 gSkrelpPokedexText[] = _(
-    "A POKéMON that mutated from an\n"
-    "extraterrestrial virus exposed to a laser\n"
-    "beam. Its body is configured for superior\n"
-    "agility and speed.");
+    "Camouflaged as rotten kelp, it hides\n"
+    "from foes while storing up power for its\n"
+    "evolution. They spray liquid poison on\n"
+    "prey that approach unawares.");
 
 const u8 gDragalgePokedexText[] = _(
-    "A POKéMON that mutated from an\n"
-    "extraterrestrial virus exposed to a laser\n"
-    "beam. Its body is configured for superior\n"
-    "agility and speed.");
+    "Their poison is strong enough to eat\n"
+    "through the hull of a tanker. Tales are\n"
+    "told of ships that wander into seas where\n"
+    "DRAGALGE live, never to return.");
 
 const u8 gGalladePokedexText[] = _(
-    "A POKéMON that mutated from an\n"
-    "extraterrestrial virus exposed to a laser\n"
-    "beam. Its body is configured for superior\n"
-    "agility and speed.");
+    "It apparently does not feel the pull of\n"
+    "gravity because it supports itself with\n"
+    "psychic power. It will give its life to\n"
+    "protect its Trainer.");
 
 const u8 gProbopassPokedexText[] = _(
-    "A POKéMON that mutated from an\n"
-    "extraterrestrial virus exposed to a laser\n"
-    "beam. Its body is configured for superior\n"
-    "agility and speed.");
+    "It freely controls three units called\n"
+    "Mini-Noses using magnetic force.\n"
+    "With them, it can attack its foes from\n"
+    "three directions.");
 
 const u8 gMagnezonePokedexText[] = _(
-    "A POKéMON that mutated from an\n"
-    "extraterrestrial virus exposed to a laser\n"
-    "beam. Its body is configured for superior\n"
-    "agility and speed.");
+    "As it zooms through the sky, this\n"
+    "POKéMON seems to be receiving signals\n"
+    "of unknown origin, while transmitting its\n"
+    "own signals of unknown purpose.");
 
 const u8 gSquidPokedexText[] = _(
     "A POKéMON that mutated from an\n"
     "extraterrestrial virus exposed to a laser\n"
     "beam. Its body is configured for superior\n"
     "agility and speed.");
+
+const u8 gBudewPokedexText[] = _(
+    "Over the winter, it closes its bud and\n"
+    "endures the cold. Sensitive to changing\n"
+    "temperature, the bud is said to bloom\n"
+    "when it feels the sun's warm touch.");
+
+const u8 gRoseradePokedexText[] = _(
+    "A ROSELIA that drinks nutritionally rich\n"
+    "springwater blooms with lovely flowers.\n"
+    "The fragrance of its flowers has the\n"
+    "effect of making its foes careless.");
+
+const u8 gDusknoirPokedexText[] = _(
+    "This feared POKéMON is said to travel to\n"
+    "worlds unknown. Some even believe that\n"
+    "it takes lost spirits into its pliant body\n"
+    "and guides them home.");
+
+const u8 gChinglingPokedexText[] = _(
+    "There is an orb inside its mouth.\n"
+    "When it hops, the orb bounces all\n"
+    "over and makes a ringing sound.\n"
+    "It can cry for an awfully long time.");
+
+const u8 gRhyperiorPokedexText[] = _(
+    "It can launch a rock held in its hand\n"
+    "like a missile by tightening and then\n"
+    "expanding its muscles instantaneously.\n"
+    "Geodude are shot at rare times.");
+
+const u8 gFroslassPokedexText[] = _(
+    "When it finds people or POKéMON it likes,\n"
+    "it freezes them and takes them to its\n"
+    "chilly den, where they become its\n"
+    "decorations.");
+
+const u8 gSkorupiPokedexText[] = _(
+    "It grips prey with its tail claws and\n"
+    "injects poison. It tenaciously hangs\n"
+    "on until the poison takes.\n"
+    "It can survive a year without food.");
+
+const u8 gDrapionPokedexText[] = _(
+    "Possessing a sturdy build, it takes\n"
+    "pride in its strength. It has the power\n"
+    "in its clawed arms to make scrap\n"
+    "out of a car.");
+
+const u8 gRegielekiPokedexText[] = _(
+    "This POKéMON is a cluster of electrical\n"
+    "energy. It's said that removing the rings\n"
+    "on Regieleki's body will unleash the\n"
+    "POKéMON's latent power.");
+
+const u8 gRegidragoPokedexText[] = _(
+    "An academic theory proposes that\n"
+    "REGIDRAGO's arms were once the head of an\n"
+    "ancient dragon POKéMON. The theory\n"
+    "remains unproven.");
+
+const u8 gRegigigasPokedexText[] = _(
+    "There is an enduring legend that\n"
+    "states this Pokémon shaped REGIROCK,\n"
+    "REGICE, and REGISTEEL out of clay, ice,\n"
+    "and magma.");

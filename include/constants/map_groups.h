@@ -404,6 +404,7 @@ enum
     MAP_TERRA_CAVE_END                           = (105 | (24 << 8)),
     MAP_ALTERING_CAVE                            = (106 | (24 << 8)),
     MAP_METEOR_FALLS_STEVENS_CAVE                = (107 | (24 << 8)),
+    MAP_MOUNTAIN_LAIR                            = (108 | (24 << 8)),
 
     // gMapGroup_IndoorDynamic
     MAP_SECRET_BASE_RED_CAVE1    = (0 | (25 << 8)),
@@ -558,6 +559,9 @@ enum
     MAP_NAVEL_ROCK_DOWN11                               = (86 | (26 << 8)),
     MAP_NAVEL_ROCK_BOTTOM                               = (87 | (26 << 8)),
     MAP_TRAINER_HILL_ELEVATOR                           = (88 | (26 << 8)),
+    MAP_BATTLE_ARCADE_BATTLE_ROOM                       = (89 | (26 << 8)),
+    MAP_BATTLE_ARCADE_HALLWAY                           = (90 | (26 << 8)),
+    MAP_BATTLE_ARCADE_LOBBY                             = (91 | (26 << 8)),
 
     // gMapGroup_IndoorRoute104Prototype
     MAP_ROUTE104_PROTOTYPE                          = (0 | (27 << 8)),
@@ -599,6 +603,6 @@ enum
 
 #define MAP_GROUPS_COUNT 34
 
-// static const u8 MAP_GROUP_COUNT[] = {58, 5, 5, 6, 7, 8, 9, 7, 7, 15, 8, 17, 10, 23, 13, 15, 15, 2, 2, 2, 3, 1, 1, 1, 108, 61, 89, 2, 1, 13, 1, 1, 3, 1, 0};
+// static const u8 MAP_GROUP_COUNT[] = {58, 5, 5, 6, 7, 8, 9, 7, 7, 15, 8, 17, 10, 23, 13, 15, 15, 2, 2, 2, 3, 1, 1, 1, 109, 61, 92, 2, 1, 13, 1, 1, 3, 1, 0};
 
 #endif // GUARD_CONSTANTS_MAP_GROUPS_H

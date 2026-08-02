@@ -248,7 +248,7 @@ BattleArcade_Registration_EventScript_EnterElevator::
 BattleArcade_Registration_EventScript_GoToHallway::
 	call BattleArcade_Registration_EventScript_ShowYouToBattleRoom
 	special HealPlayerParty
-	call BattleArcade_Lobby_EventScript_WarpToHallway
+	warp MAP_BATTLE_ARCADE_HALLWAY, 1, 3
 	setvar VAR_TEMP_CHALLENGE_STATUS, 0
 	waitstate
 	end
@@ -258,11 +258,6 @@ BattleArcade_Registration_EventScript_ShowYouToBattleRoom::
 	msgbox BattleFrontier_BattleFactoryPreBattleRoom_Text_RightThisWay, MSGBOX_DEFAULT
 	call BattleArcade_Lobby_EventScript_WalkToElevator
 	return
-
-
-BattleArcade_Registration_EventScript_GetChallengeStatus::
-	frontier_getstatus
-	end
 
 
 BattleArcade_Registration_EventScript_ResetChallengeStatus::

@@ -4646,98 +4646,98 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [NATIONAL_DEX_DHELMISE] =
     {
-        .categoryName = _("DNA"),
-        .height = 17,
-        .weight = 608,
+        .categoryName = _("SEA CREEPER"),
+        .height = 39,
+        .weight = 2100,
         .description = gDhelmisePokedexText,
         .pokemonScale = 256,
         .pokemonOffset = 0,
-        .trainerScale = 290,
-        .trainerOffset = 2,
+        .trainerScale = 510,
+        .trainerOffset = 11,
     },
 
     [NATIONAL_DEX_CROAGUNK] =
     {
-        .categoryName = _("DNA"),
-        .height = 17,
-        .weight = 608,
+        .categoryName = _("TOXIC MOUTH"),
+        .height = 7,
+        .weight = 230,
         .description = gCroagunkPokedexText,
-        .pokemonScale = 256,
-        .pokemonOffset = 0,
-        .trainerScale = 290,
-        .trainerOffset = 2,
+        .pokemonScale = 365,
+        .pokemonOffset = 12,
+        .trainerScale = 256,
+        .trainerOffset = 0,
     },
 
     [NATIONAL_DEX_TOXICROAK] =
     {
-        .categoryName = _("DNA"),
-        .height = 17,
-        .weight = 608,
+        .categoryName = _("TOXIC MOUTH"),
+        .height = 13,
+        .weight = 444,
         .description = gToxicroakPokedexText,
-        .pokemonScale = 256,
-        .pokemonOffset = 0,
-        .trainerScale = 290,
-        .trainerOffset = 2,
+        .pokemonScale = 272,
+        .pokemonOffset = 3,
+        .trainerScale = 256,
+        .trainerOffset = 0,
     },
 
     [NATIONAL_DEX_SKRELP] =
     {
-        .categoryName = _("DNA"),
-        .height = 17,
-        .weight = 608,
+        .categoryName = _("MOCK KELP"),
+        .height = 5,
+        .weight = 73,
         .description = gSkrelpPokedexText,
-        .pokemonScale = 256,
-        .pokemonOffset = 0,
-        .trainerScale = 290,
-        .trainerOffset = 2,
+        .pokemonScale = 432,
+        .pokemonOffset = 13,
+        .trainerScale = 256,
+        .trainerOffset = 0,
     },
 
     [NATIONAL_DEX_DRAGALGE] =
     {
         .categoryName = _("DNA"),
-        .height = 17,
-        .weight = 608,
+        .height = 18,
+        .weight = 815,
         .description = gDragalgePokedexText,
-        .pokemonScale = 256,
-        .pokemonOffset = 0,
-        .trainerScale = 290,
-        .trainerOffset = 2,
+        .pokemonScale = 267,
+        .pokemonOffset = 2,
+        .trainerScale = 286,
+        .trainerOffset = 1,
     },
 
     [NATIONAL_DEX_GALLADE] =
     {
-        .categoryName = _("DNA"),
-        .height = 17,
-        .weight = 608,
+        .categoryName = _("BLADE"),
+        .height = 16,
+        .weight = 520,
         .description = gGalladePokedexText,
         .pokemonScale = 256,
         .pokemonOffset = 0,
-        .trainerScale = 290,
-        .trainerOffset = 2,
+        .trainerScale = 256,
+        .trainerOffset = 0,
     },
 
     [NATIONAL_DEX_PROBOPASS] =
     {
-        .categoryName = _("DNA"),
-        .height = 17,
-        .weight = 608,
+        .categoryName = _("COMPASS"),
+        .height = 14,
+        .weight = 3400,
         .description = gProbopassPokedexText,
-        .pokemonScale = 256,
-        .pokemonOffset = 0,
-        .trainerScale = 290,
-        .trainerOffset = 2,
+        .pokemonScale = 265,
+        .pokemonOffset = 2,
+        .trainerScale = 262,
+        .trainerOffset = 0,
     },
 
     [NATIONAL_DEX_MAGNEZONE] =
     {
-        .categoryName = _("DNA"),
-        .height = 17,
-        .weight = 608,
+        .categoryName = _("MAGNET AREA"),
+        .height = 12,
+        .weight = 1800,
         .description = gMagnezonePokedexText,
-        .pokemonScale = 256,
-        .pokemonOffset = 0,
-        .trainerScale = 290,
-        .trainerOffset = 2,
+        .pokemonScale = 282,
+        .pokemonOffset = 4,
+        .trainerScale = 256,
+        .trainerOffset = 0,
     },
 
     [NATIONAL_DEX_SQUID] =
@@ -4750,5 +4750,137 @@ const struct PokedexEntry gPokedexEntries[] =
         .pokemonOffset = 0,
         .trainerScale = 290,
         .trainerOffset = 2,
+    },
+
+    [NATIONAL_DEX_BUDEW] =
+    {
+        .categoryName = _("BUD"),
+        .height = 2,
+        .weight = 12,
+        .description = gBudewPokedexText,
+        .pokemonScale = 682,
+        .pokemonOffset = 24,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+    },
+
+    [NATIONAL_DEX_ROSERADE] =
+    {
+        .categoryName = _("BOUQUET"),
+        .height = 9,
+        .weight = 145,
+        .description = gRoseradePokedexText,
+        .pokemonScale = 677,
+        .pokemonOffset = 20,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+    },
+
+    [NATIONAL_DEX_DUSKNOIR] =
+    {
+        .categoryName = _("GRIPPER"),
+        .height = 22,
+        .weight = 1066,
+        .description = gDusknoirPokedexText,
+        .pokemonScale = 256,
+        .pokemonOffset = 0,
+        .trainerScale = 348,
+        .trainerOffset = 6,
+    },
+
+    [NATIONAL_DEX_CHINGLING] =
+    {
+        .categoryName = _("BELL"),
+        .height = 2,
+        .weight = 6,
+        .description = gChinglingPokedexText,
+        .pokemonScale = 682,
+        .pokemonOffset = 24,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+    },
+
+    [NATIONAL_DEX_RHYPERIOR] =
+    {
+        .categoryName = _("DRILL"),
+        .height = 24,
+        .weight = 2828,
+        .description = gRhyperiorPokedexText,
+        .pokemonScale = 256,
+        .pokemonOffset = 3,
+        .trainerScale = 369,
+        .trainerOffset = 7,
+    },
+
+    [NATIONAL_DEX_FROSLASS] =
+    {
+        .categoryName = _("SNOW LAND"),
+        .height = 13,
+        .weight = 266,
+        .description = gFroslassPokedexText,
+        .pokemonScale = 272,
+        .pokemonOffset = 3,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+    },
+
+    [NATIONAL_DEX_SKORUPI] =
+    {
+        .categoryName = _("SCORPION"),
+        .height = 8,
+        .weight = 120,
+        .description = gSkorupiPokedexText,
+        .pokemonScale = 366,
+        .pokemonOffset = 12,
+        .trainerScale = 257,
+        .trainerOffset = 0,
+    },
+
+    [NATIONAL_DEX_DRAPION] =
+    {
+        .categoryName = _("OGRE SCORP"),
+        .height = 13,
+        .weight = 615,
+        .description = gDrapionPokedexText,
+        .pokemonScale = 272,
+        .pokemonOffset = 5,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+    },
+
+    [NATIONAL_DEX_REGIELEKI] =
+    {
+        .categoryName = _("ELECTRON"),
+        .height = 12,
+        .weight = 1450,
+        .description = gRegielekiPokedexText,
+        .pokemonScale = 282,
+        .pokemonOffset = 4,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+    },
+
+    [NATIONAL_DEX_REGIDRAGO] =
+    {
+        .categoryName = _("DRAGON ORB"),
+        .height = 21,
+        .weight = 2000,
+        .description = gRegidragoPokedexText,
+        .pokemonScale = 256,
+        .pokemonOffset = 0,
+        .trainerScale = 365,
+        .trainerOffset = 7,
+    },
+
+    [NATIONAL_DEX_REGIGIGAS] =
+    {
+        .categoryName = _("COLOSSAL"),
+        .height = 37,
+        .weight = 4200,
+        .description = gRegigigasPokedexText,
+        .pokemonScale = 256,
+        .pokemonOffset = 2,
+        .trainerScale = 610,
+        .trainerOffset = 17,
     },
 };

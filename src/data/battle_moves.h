@@ -1836,7 +1836,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
     [MOVE_LEECH_LIFE] =
     {
         .effect = EFFECT_ABSORB,
-        .power = 80,
+        .power = 75,
         .type = TYPE_BUG,
         .accuracy = 100,
         .pp = 10,
@@ -4651,6 +4651,97 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
         .secondaryEffectChance = 100,
         .target = MOVE_TARGET_BOTH,
         .priority = 0,
+        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
+    },
+
+    [MOVE_MAGNET_BOMB] =
+    {
+        .effect = EFFECT_ALWAYS_HIT,
+        .power = 60,
+        .type = TYPE_STEEL,
+        .accuracy = 0,
+        .pp = 20,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
+    },
+
+    [MOVE_DOUBLE_HIT] =
+    {
+        .effect = EFFECT_DOUBLE_HIT,
+        .power = 35,
+        .type = TYPE_NORMAL,
+        .accuracy = 90,
+        .pp = 10,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
+    },
+
+    [MOVE_TWIN_BEAM] =
+    {
+        .effect = EFFECT_DOUBLE_HIT,
+        .power = 40,
+        .type = TYPE_PSYCHIC,
+        .accuracy = 100,
+        .pp = 10,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
+    },
+
+    [MOVE_ROCK_WRECKER] =
+    {
+        .effect = EFFECT_RECHARGE,
+        .power = 150,
+        .type = TYPE_ROCK,
+        .accuracy = 90,
+        .pp = 5,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
+    },
+
+    [MOVE_OMINOUS_WIND] =
+    {
+        .effect = EFFECT_ALL_STATS_UP_HIT,
+        .power = 60,
+        .type = TYPE_GHOST,
+        .accuracy = 100,
+        .pp = 5,
+        .secondaryEffectChance = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
+    },
+
+    [MOVE_WAKE_UP_SLAP] =
+    {
+        .effect = EFFECT_WAKE_UP_SLAP,
+        .power = 60,
+        .type = TYPE_FIGHTING,
+        .accuracy = 100,
+        .pp = 10,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
+    },
+
+    [MOVE_ICE_SHARD] =
+    {
+        .effect = EFFECT_HIT,
+        .power = 40,
+        .type = TYPE_ICE,
+        .accuracy = 100,
+        .pp = 30,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 1,
         .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
     },
 };

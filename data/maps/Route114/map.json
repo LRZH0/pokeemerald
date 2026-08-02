@@ -15,7 +15,7 @@
   "connections": [
     {
       "map": "MAP_ROUTE115",
-      "offset": 40,
+      "offset": 0,
       "direction": "left"
     },
     {
@@ -504,6 +504,14 @@
       "elevation": 3,
       "item": "ITEM_REVIVE",
       "flag": "FLAG_HIDDEN_ITEM_ROUTE_114_REVIVE"
+    },
+    {
+      "type": "hidden_item",
+      "x": 18,
+      "y": 6,
+      "elevation": 0,
+      "item": "ITEM_HEART_SCALE",
+      "flag": "FLAG_UNUSED_0x267"
     }
   ]
 }

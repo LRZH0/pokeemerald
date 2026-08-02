@@ -5950,6 +5950,66 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED | F_EV_SPREAD_ATTACK,
         .nature = NATURE_DOCILE
     },
+
+    // Custom Frontier Sets
+    [FRONTIER_MON_GALLADE_1] = {
+        .species = SPECIES_GALLADE,
+        .moves = {MOVE_SHADOW_BALL, MOVE_BRICK_BREAK, MOVE_PROTECT, MOVE_BULK_UP},
+        .itemTableId = BATTLE_FRONTIER_ITEM_SHELL_BELL,
+        .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_ATTACK,
+        .nature = NATURE_JOLLY,
+    },
+    [FRONTIER_MON_GALLADE_2] = {
+        .species = SPECIES_GALLADE,
+        .moves = {MOVE_PSYCHO_CUT, MOVE_FIRE_PUNCH, MOVE_TORMENT, MOVE_WILL_O_WISP},
+        .itemTableId = BATTLE_FRONTIER_ITEM_FOCUS_BAND,
+        .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_SP_ATTACK,
+        .nature = NATURE_TIMID,
+    },
+    [FRONTIER_MON_GALLADE_3] = {
+        .species = SPECIES_GALLADE,
+        .moves = {MOVE_PSYCHIC, MOVE_THUNDERBOLT, MOVE_ICE_PUNCH, MOVE_FIRE_PUNCH},
+        .itemTableId = BATTLE_FRONTIER_ITEM_LUM_BERRY,
+        .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_SP_ATTACK,
+        .nature = NATURE_MODEST,
+    },
+    [FRONTIER_MON_GALLADE_4] = {
+        .species = SPECIES_GALLADE,
+        .moves = {MOVE_BRICK_BREAK, MOVE_FURY_CUTTER, MOVE_REFLECT, MOVE_LIGHT_SCREEN},
+        .itemTableId = BATTLE_FRONTIER_ITEM_LEFTOVERS,
+        .evSpread = F_EV_SPREAD_HP | F_EV_SPREAD_SPEED,
+        .nature = NATURE_JOLLY,
+    },
+    [FRONTIER_MON_GALLADE_5] = {
+        .species = SPECIES_GALLADE,
+        .moves = {MOVE_SUPERPOWER, MOVE_EARTHQUAKE, MOVE_SHADOW_BALL, MOVE_ROCK_SLIDE},
+        .itemTableId = BATTLE_FRONTIER_ITEM_CHOICE_BAND,
+        .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_ATTACK,
+        .nature = NATURE_ADAMANT,
+    },
+    [FRONTIER_MON_GALLADE_6] = {
+        .species = SPECIES_GALLADE,
+        .moves = {MOVE_SUPERPOWER, MOVE_AERIAL_ACE, MOVE_SLASH, MOVE_SWORDS_DANCE},
+        .itemTableId = BATTLE_FRONTIER_ITEM_WHITE_HERB,
+        .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_ATTACK,
+        .nature = NATURE_JOLLY,
+    },
+    [FRONTIER_MON_GALLADE_7] = {
+        .species = SPECIES_GALLADE,
+        .moves = {MOVE_SLASH, MOVE_PSYCHO_CUT, MOVE_ICE_PUNCH, MOVE_PROTECT},
+        .itemTableId = BATTLE_FRONTIER_ITEM_SCOPE_LENS,
+        .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_ATTACK | F_EV_SPREAD_SP_ATTACK,
+        .nature = NATURE_HASTY,
+    },
+    [FRONTIER_MON_GALLADE_8] = {
+        .species = SPECIES_GALLADE,
+        .moves = {MOVE_BRICK_BREAK, MOVE_EARTHQUAKE, MOVE_SHADOW_BALL, MOVE_BULK_UP},
+        .itemTableId = BATTLE_FRONTIER_ITEM_LEFTOVERS,
+        .evSpread = F_EV_SPREAD_HP | F_EV_SPREAD_DEFENSE | F_EV_SPREAD_ATTACK,
+        .nature = NATURE_BOLD,
+    },
+
+    // Open Level Sets
     [FRONTIER_MON_DRAGONITE_1] = {
         .species = SPECIES_DRAGONITE,
         .moves = {MOVE_EARTHQUAKE, MOVE_AERIAL_ACE, MOVE_BRICK_BREAK, MOVE_DRAGON_DANCE},

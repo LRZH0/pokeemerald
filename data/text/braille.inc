@@ -115,3 +115,10 @@ AncientTomb_Braille_ShineInTheMiddle:
 	.braille "INHERIT OUR\n"
 	.braille "WILL, SHINE\n"
 	.braille "IN THE MIDDLE.$"
+
+MountainLair_Braille_ShowYourMight::
+	brailleformat 3, 0, 25, 19, 6, 3
+	.braille "STAND THREE\n"
+	.braille "BACK. SHOW\n"
+	.braille "YOUR MIGHT\n"
+	.braille "AND PROCEED.$"

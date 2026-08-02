@@ -379,7 +379,7 @@ BattleArcade_RoulettRoom_EventScript_ResolveEndChallenge_2:
 
 
 BattleArcade_Challenge_EventScript_GiveBP::
-	arcade_givepoints
+	frontier_givepoints
 	msgbox BattleArcade_Challenge_EventScript_GiveBP_Text_0
 	msgbox BattleFrontier_Text_ObtainedXBattlePoints, MSGBOX_GETPOINTS
 	return

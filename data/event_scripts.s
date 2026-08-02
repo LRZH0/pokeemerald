@@ -1074,3 +1074,5 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/BattleArcade_Hallway/scripts.inc"
 // End battle_arcade
 
+
+	.include "data/maps/MountainLair/scripts.inc"

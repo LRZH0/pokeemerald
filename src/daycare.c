@@ -731,7 +731,7 @@ void RejectEggFromDayCare(void)
 static void AlterEggSpeciesWithIncenseItem(u16 *species, struct DayCare *daycare)
 {
     u16 motherItem, fatherItem;
-    if (*species == SPECIES_WYNAUT || *species == SPECIES_AZURILL)
+    if (*species == SPECIES_WYNAUT || *species == SPECIES_AZURILL || *species == SPECIES_BUDEW || *species == SPECIES_CHINGLING)
     {
         motherItem = GetBoxMonData(&daycare->mons[0].mon, MON_DATA_HELD_ITEM);
         fatherItem = GetBoxMonData(&daycare->mons[1].mon, MON_DATA_HELD_ITEM);
@@ -743,6 +743,16 @@ static void AlterEggSpeciesWithIncenseItem(u16 *species, struct DayCare *daycare
         if (*species == SPECIES_AZURILL && motherItem != ITEM_SEA_INCENSE && fatherItem != ITEM_SEA_INCENSE)
         {
             *species = SPECIES_MARILL;
+        }
+
+        if (*species == SPECIES_BUDEW && motherItem != ITEM_ROSE_INCENSE && fatherItem != ITEM_ROSE_INCENSE)
+        {
+            *species = SPECIES_ROSELIA;
+        }
+
+        if (*species == SPECIES_CHINGLING && motherItem != ITEM_PURE_INCENSE && fatherItem != ITEM_PURE_INCENSE)
+        {
+            *species == SPECIES_CHIMECHO;
         }
     }
 }

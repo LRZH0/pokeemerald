@@ -67,4 +67,8 @@ const u8 gEnemyMonElevation[NUM_SPECIES] =
     [SPECIES_PROBOPASS] = 6,
     [SPECIES_MAGNEZONE] = 4,
     [SPECIES_SQUID] = 2,
+    [SPECIES_DUSKNOIR] = 6,
+    [SPECIES_FROSLASS] = 7,
+    [SPECIES_REGIELEKI] = 8,
+    [SPECIES_REGIDRAGO] = 5,
 };

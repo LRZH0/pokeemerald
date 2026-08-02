@@ -2846,7 +2846,7 @@ const struct ContestMove gContestMoves[MOVES_COUNT] =
         .effect = CONTEST_EFFECT_BETTER_WHEN_AUDIENCE_EXCITED,
         .contestCategory = CONTEST_CATEGORY_TOUGH,
         .comboStarterId = 0,
-        .comboMoves = {COMBO_STARTER_CALM_MIND},
+        .comboMoves = {0},
     },
 
     [MOVE_SNARL] =
@@ -2854,7 +2854,71 @@ const struct ContestMove gContestMoves[MOVES_COUNT] =
         .effect = CONTEST_EFFECT_MAKE_FOLLOWING_MONS_NERVOUS,
         .contestCategory = CONTEST_CATEGORY_TOUGH,
         .comboStarterId = 0,
-        .comboMoves = {COMBO_STARTER_CALM_MIND},
+        .comboMoves = {0},
+    },
+
+    [MOVE_MAGNET_BOMB] =
+    {
+        .effect = CONTEST_EFFECT_BETTER_IF_FIRST,
+        .contestCategory = CONTEST_CATEGORY_COOL,
+        .comboStarterId = 0,
+        .comboMoves = {0},
+    },
+
+    [MOVE_PSYCHO_CUT] =
+    {
+        .effect = CONTEST_EFFECT_HIGHLY_APPEALING,
+        .contestCategory = CONTEST_CATEGORY_COOL,
+        .comboStarterId = 0,
+        .comboMoves = {COMBO_STARTER_FOCUS_ENERGY},
+    },
+
+    [MOVE_DOUBLE_HIT] =
+    {
+        .effect = CONTEST_EFFECT_REPETITION_NOT_BORING,
+        .contestCategory = CONTEST_CATEGORY_COOL,
+        .comboStarterId = 0,
+        .comboMoves = {0},
+    },
+
+    [MOVE_TWIN_BEAM] =
+    {
+        .effect = CONTEST_EFFECT_REPETITION_NOT_BORING,
+        .contestCategory = CONTEST_CATEGORY_SMART,
+        .comboStarterId = 0,
+        .comboMoves = {0},
+    },
+
+    [MOVE_ROCK_WRECKER] =
+    {
+        .effect = CONTEST_EFFECT_JAMS_OTHERS_BUT_MISS_ONE_TURN,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .comboStarterId = 0,
+        .comboMoves = {0},
+    },
+
+    [MOVE_OMINOUS_WIND] =
+    {
+        .effect = CONTEST_EFFECT_IMPROVE_CONDITION_PREVENT_NERVOUSNESS,
+        .contestCategory = CONTEST_CATEGORY_BEAUTY,
+        .comboStarterId = 0,
+        .comboMoves = {0},
+    },
+
+    [MOVE_WAKE_UP_SLAP] =
+    {
+        .effect = CONTEST_EFFECT_AFFECTED_BY_PREV_APPEAL,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .comboStarterId = 0,
+        .comboMoves = {0},
+    },
+
+    [MOVE_ICE_SHARD] =
+    {
+        .effect = CONTEST_EFFECT_NEXT_APPEAL_EARLIER,
+        .contestCategory = CONTEST_CATEGORY_BEAUTY,
+        .comboStarterId = 0,
+        .comboMoves = {0},
     },
 };
 

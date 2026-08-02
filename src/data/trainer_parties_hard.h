@@ -12704,3 +12704,11 @@ static const struct TrainerMonItemCustomMoves sPartyHard_Test[] = {
     .moves = {MOVE_RECOVER, MOVE_SURF, MOVE_ICE_BEAM, MOVE_TOXIC}
     }
 };
+
+static const struct TrainerMonNoItemDefaultMoves sPartyHard_Dahlia[] = {
+    {
+    .iv = 0,
+    .lvl = 5,
+    .species = SPECIES_BELDUM,
+    }
+};

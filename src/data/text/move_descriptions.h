@@ -1429,6 +1429,38 @@ static const u8 sSnarlDescription[] = _(
     "The user cries out,\n"
     "lowering foes' SP. ATK.");
 
+static const u8 sMagnetBombDescription[] = _(
+    "Launches a steel bomb\n"
+    "that never misses.");
+
+static const u8 sPsychoCutDescription[] = _(
+    "Slashes with psychic blades.\n"
+    "High critical-hit ratio.");
+
+static const u8 sDoubleHitDescription[] = _(
+    "A slamming attack that hits.\n"
+    "twice in a row.");
+
+static const u8 sTwinBeamDescription[] = _(
+    "A mystical beam from the eyes\n"
+    "that hits twice in a row.");
+
+static const u8 sRockWreckerDescription[] = _(
+    "Powerful, but leaves the\n"
+    "user immobile the next turn.");
+
+static const u8 sOminousWindDescription[] = _(
+    "A repulsive wind that may\n"
+    "raise all stats.");
+
+static const u8 sWakeUpSlapDescription[] = _(
+    "Powerful against sleeping\n"
+    "foes, but also heals them.");
+
+static const u8 sIceShardDescription[] = _(
+    "Flash frozen ice is thrown\n"
+    "quickly to strike first.");
+
 // MOVE_NONE is ignored in this table. Make sure to always subtract 1 before getting the right pointer.
 const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
 {
@@ -1789,4 +1821,11 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_ANCHOR_SHOT - 1] = sAnchorShotDescription,
     [MOVE_POWER_WHIP - 1] = sPowerWhipDescription,
     [MOVE_SNARL - 1] = sSnarlDescription,
+    [MOVE_MAGNET_BOMB - 1] = sMagnetBombDescription,
+    [MOVE_PSYCHO_CUT - 1] = sPsychoCutDescription,
+    [MOVE_DOUBLE_HIT - 1] = sDoubleHitDescription,
+    [MOVE_TWIN_BEAM - 1] = sTwinBeamDescription,
+    [MOVE_OMINOUS_WIND - 1] = sOminousWindDescription,
+    [MOVE_WAKE_UP_SLAP - 1] = sWakeUpSlapDescription,
+    [MOVE_ICE_SHARD - 1] = sIceShardDescription,
 };

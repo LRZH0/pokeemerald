@@ -40,11 +40,22 @@ EverGrandeCity_DrakesRoom_EventScript_CloseDoor::
 EverGrandeCity_DrakesRoom_EventScript_Drake::
 	lock
 	faceplayer
+	goto_if_set FLAG_IS_CHAMPION, EverGrandeCity_DrakesRoom_EventScript_DrakeRematch
 	goto_if_set FLAG_DEFEATED_ELITE_4_DRAKE, EverGrandeCity_DrakesRoom_EventScript_PostBattleSpeech
 	playbgm MUS_ENCOUNTER_ELITE_FOUR, FALSE
 	msgbox EverGrandeCity_DrakesRoom_Text_IntroSpeech, MSGBOX_DEFAULT
 	trainerbattle_no_intro TRAINER_DRAKE, EverGrandeCity_DrakesRoom_Text_Defeat
 	goto EverGrandeCity_DrakesRoom_EventScript_Defeated
+	end
+
+EverGrandeCity_DrakesRoom_EventScript_DrakeRematch::
+	lock
+	faceplayer
+	goto_if_set FLAG_DEFEATED_ELITE_4_DRAKE, EverGrandeCity_DrakesRoom_EventScript_PostBattleSpeechRematch
+	playbgm MUS_ENCOUNTER_ELITE_FOUR, FALSE
+	msgbox EverGrandeCity_DrakesRoom_Text_IntroSpeechRematch, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_DRAKE_2, EverGrandeCity_DrakesRoom_Text_DefeatRematch
+	goto EverGrandeCity_DrakesRoom_EventScript_DefeatedRematch
 	end
 
 EverGrandeCity_DrakesRoom_EventScript_PostBattleSpeech::
@@ -58,6 +69,20 @@ EverGrandeCity_DrakesRoom_EventScript_Defeated::
 	setflag FLAG_DEFEATED_ELITE_4_DRAKE
 	call PokemonLeague_EliteFour_SetAdvanceToNextRoomMetatiles
 	msgbox EverGrandeCity_DrakesRoom_Text_PostBattleSpeech, MSGBOX_DEFAULT
+	release
+	end
+
+EverGrandeCity_DrakesRoom_EventScript_PostBattleSpeechRematch::
+	msgbox EverGrandeCity_DrakesRoom_Text_PostBattleSpeechRematch, MSGBOX_DEFAULT
+	release
+	end
+
+EverGrandeCity_DrakesRoom_EventScript_DefeatedRematch::
+	setvar VAR_0x8004, FANCOUNTER_DEFEATED_DRAKE
+	special Script_TryGainNewFanFromCounter
+	setflag FLAG_DEFEATED_ELITE_4_DRAKE
+	call PokemonLeague_EliteFour_SetAdvanceToNextRoomMetatiles
+	msgbox EverGrandeCity_DrakesRoom_Text_PostBattleSpeechRematch, MSGBOX_DEFAULT
 	release
 	end
 
@@ -89,4 +114,21 @@ EverGrandeCity_DrakesRoom_Text_PostBattleSpeech:
 	.string "TRAINERS and grow strong.\p"
 	.string "Go! Go onwards!\n"
 	.string "The CHAMPION is waiting!$"
+
+EverGrandeCity_DrakesRoom_Text_IntroSpeechRematch:
+	.string "Oh, I've been waitin' for you!\p"
+	.string "My POKéMON and I are going to show\n"
+	.string "you everything we've got!\p"
+	.string "Well then, you better get ready\n"
+	.string "to try and stop me!$"
+
+EverGrandeCity_DrakesRoom_Text_DefeatRematch:
+	.string "Spectacular!$"
+
+EverGrandeCity_DrakesRoom_Text_PostBattleSpeechRematch:
+	.string "I got a glimpse inside your heart!\n"
+	.string "There's nothing for me to say to you!\p"
+	.string "Go forth, TRAINER!\p"
+	.string "Go on to your next challenge with\n"
+	.string "your head held high!$"
 

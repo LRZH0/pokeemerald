@@ -397,6 +397,17 @@ gCryTable::
 	cry Cry_Probopass
 	cry Cry_Magnezone
 	cry Cry_Squid
+	cry Cry_Budew
+	cry Cry_Roserade
+	cry Cry_Dusknoir
+	cry Cry_Chingling
+	cry Cry_Rhyperior
+	cry Cry_Froslass
+	cry Cry_Skorupi
+	cry Cry_Drapion
+	cry Cry_Regieleki
+	cry Cry_Regidrago
+	cry Cry_Regigigas
 
 	.align 2
 gCryTable_Reverse::
@@ -797,3 +808,14 @@ gCryTable_Reverse::
 	cry_reverse Cry_Probopass
 	cry_reverse Cry_Magnezone
 	cry_reverse Cry_Squid
+	cry_reverse Cry_Budew
+	cry_reverse Cry_Roserade
+	cry_reverse Cry_Dusknoir
+	cry_reverse Cry_Chingling
+	cry_reverse Cry_Rhyperior
+	cry_reverse Cry_Froslass
+	cry_reverse Cry_Skorupi
+	cry_reverse Cry_Drapion
+	cry_reverse Cry_Regieleki
+	cry_reverse Cry_Regidrago
+	cry_reverse Cry_Regigigas

@@ -53,7 +53,10 @@
     F(SNATCH) \
     F(OVERHEAT) \
     F(LEECH_LIFE) \
-    F(SNARL)/* \
+    F(SNARL) \
+    F(DOUBLE_HIT) \
+    F(ICE_SHARD) \
+    F(OMINOUS_WIND)/* \
     F(FROST_BREATH)*/
 
 #define FOREACH_HM(F) \
